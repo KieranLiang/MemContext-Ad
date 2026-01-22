@@ -1,0 +1,2204 @@
+{
+    "advertisements": [
+      {
+        "ad_id": "ad_001",
+        "title": "有机新鲜蔬菜礼盒",
+        "description": "农场直供，新鲜有机蔬菜，健康生活从每一餐开始",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["有机", "蔬菜", "健康", "新鲜", "农场"],
+        "topics": ["食品", "健康", "生鲜"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_002",
+        "title": "手工制作精品蛋糕",
+        "description": "纯手工制作，选用进口食材，生日聚会首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["蛋糕", "手工", "甜品", "生日", "聚会"],
+        "topics": ["食品", "甜品", "烘焙"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_003",
+        "title": "进口优质牛排套餐",
+        "description": "澳洲进口和牛，专业烹饪指导，在家享受米其林级美味",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["牛排", "和牛", "进口", "美食", "烹饪"],
+        "topics": ["食品", "肉类", "高端"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_004",
+        "title": "新鲜水果拼盘",
+        "description": "当季新鲜水果，营养丰富，每日配送",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["水果", "新鲜", "营养", "当季", "配送"],
+        "topics": ["食品", "水果", "生鲜"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_005",
+        "title": "传统手工拉面",
+        "description": "传承百年工艺，手工拉制，汤鲜味美",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["拉面", "手工", "传统", "面食", "美食"],
+        "topics": ["食品", "面食", "传统"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_006",
+        "title": "科幻巨制《流浪地球2》",
+        "description": "震撼视效，探索宇宙奥秘，年度最值得期待科幻大片",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["科幻", "电影", "宇宙", "视效", "大片"],
+        "topics": ["电影", "科幻", "娱乐"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_007",
+        "title": "爱情喜剧《心动时刻》",
+        "description": "温暖治愈，笑中带泪，适合情侣观看的浪漫喜剧",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["爱情", "喜剧", "浪漫", "治愈", "情侣"],
+        "topics": ["电影", "爱情", "喜剧"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_008",
+        "title": "动作大片《极限特工》",
+        "description": "惊险刺激，高难度动作场面，肾上腺素飙升",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["动作", "特工", "惊险", "刺激", "大片"],
+        "topics": ["电影", "动作", "惊悚"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_009",
+        "title": "悬疑推理《真相迷雾》",
+        "description": "烧脑剧情，层层反转，挑战你的推理能力",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["悬疑", "推理", "烧脑", "反转", "剧情"],
+        "topics": ["电影", "悬疑", "推理"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_010",
+        "title": "动画电影《奇幻冒险》",
+        "description": "精美动画，温馨故事，适合全家观看",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["动画", "冒险", "奇幻", "家庭", "温馨"],
+        "topics": ["电影", "动画", "家庭"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_011",
+        "title": "智能AI写作助手",
+        "description": "一键生成高质量文案，提升写作效率10倍",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["AI", "写作", "助手", "文案", "效率"],
+        "topics": ["工具", "AI", "软件"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_012",
+        "title": "专业图片编辑工具",
+        "description": "强大的图片处理功能，轻松打造专业级作品",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["图片", "编辑", "设计", "处理", "专业"],
+        "topics": ["工具", "设计", "软件"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_013",
+        "title": "项目管理协作平台",
+        "description": "团队协作神器，任务管理、进度跟踪一站式解决",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["项目", "管理", "协作", "团队", "效率"],
+        "topics": ["工具", "协作", "平台"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_014",
+        "title": "代码版本控制工具",
+        "description": "专业的Git管理工具，让代码协作更简单高效",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["代码", "Git", "版本控制", "开发", "协作"],
+        "topics": ["工具", "开发", "软件"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_015",
+        "title": "在线文档协作工具",
+        "description": "实时协作编辑，多人同时工作，提升团队效率",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["文档", "协作", "在线", "编辑", "团队"],
+        "topics": ["工具", "协作", "平台"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_016",
+        "title": "法国进口红酒",
+        "description": "波尔多产区精选，醇厚口感，适合商务宴请",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["红酒", "法国", "波尔多", "进口", "商务"],
+        "topics": ["酒水", "红酒", "进口"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_017",
+        "title": "精酿啤酒礼盒",
+        "description": "手工精酿，多种口味，聚会必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["啤酒", "精酿", "手工", "聚会", "礼盒"],
+        "topics": ["酒水", "啤酒", "精酿"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_018",
+        "title": "日本清酒套装",
+        "description": "正宗日式清酒，口感清雅，搭配日料最佳",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["清酒", "日本", "日式", "清雅", "日料"],
+        "topics": ["酒水", "清酒", "进口"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_019",
+        "title": "威士忌收藏套装",
+        "description": "苏格兰单一麦芽，限量珍藏，适合收藏品鉴",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["威士忌", "苏格兰", "单一麦芽", "收藏", "品鉴"],
+        "topics": ["酒水", "威士忌", "收藏"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_020",
+        "title": "起泡酒香槟",
+        "description": "法国香槟区原产，气泡丰富，庆祝时刻首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["香槟", "起泡酒", "法国", "庆祝", "气泡"],
+        "topics": ["酒水", "香槟", "起泡酒"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_021",
+        "title": "新鲜有机鸡蛋",
+        "description": "散养土鸡蛋，营养丰富，每日新鲜配送",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["鸡蛋", "有机", "散养", "营养", "新鲜"],
+        "topics": ["食品", "蛋类", "健康"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_022",
+        "title": "进口三文鱼刺身",
+        "description": "挪威进口，新鲜直达，日式料理首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["三文鱼", "刺身", "进口", "海鲜", "日式"],
+        "topics": ["食品", "海鲜", "日式"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_023",
+        "title": "手工巧克力礼盒",
+        "description": "比利时进口可可，手工制作，情人节首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["巧克力", "手工", "比利时", "情人节", "礼盒"],
+        "topics": ["食品", "甜品", "礼品"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_024",
+        "title": "有机五谷杂粮",
+        "description": "天然有机，营养均衡，健康生活必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["五谷", "杂粮", "有机", "营养", "健康"],
+        "topics": ["食品", "杂粮", "健康"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_025",
+        "title": "精品咖啡豆",
+        "description": "精选阿拉比卡豆，现磨现煮，醇香浓郁",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["咖啡", "咖啡豆", "阿拉比卡", "现磨", "醇香"],
+        "topics": ["食品", "饮品", "咖啡"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_026",
+        "title": "进口车厘子",
+        "description": "智利进口，个大饱满，甜脆多汁",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["车厘子", "进口", "智利", "新鲜", "水果"],
+        "topics": ["食品", "水果", "进口"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_027",
+        "title": "手工水饺",
+        "description": "传统工艺，手工包制，皮薄馅大",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["水饺", "手工", "传统", "面食", "速食"],
+        "topics": ["食品", "面食", "速食"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_028",
+        "title": "有机蜂蜜",
+        "description": "纯天然野生蜂蜜，无添加，营养健康",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["蜂蜜", "有机", "天然", "野生", "健康"],
+        "topics": ["食品", "保健品", "健康"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_029",
+        "title": "进口芝士",
+        "description": "法国原产，多种口味，西餐必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["芝士", "奶酪", "进口", "法国", "西餐"],
+        "topics": ["食品", "乳制品", "进口"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_030",
+        "title": "精品茶叶礼盒",
+        "description": "西湖龙井，明前新茶，清香甘甜",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["茶叶", "龙井", "明前", "礼盒", "茶"],
+        "topics": ["食品", "茶叶", "礼品"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_031",
+        "title": "有机大米",
+        "description": "东北五常大米，有机认证，粒粒饱满",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["大米", "五常", "有机", "东北", "主食"],
+        "topics": ["食品", "主食", "健康"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_032",
+        "title": "手工月饼",
+        "description": "传统工艺，多种口味，中秋佳节首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["月饼", "手工", "传统", "中秋", "糕点"],
+        "topics": ["食品", "糕点", "传统"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_033",
+        "title": "进口橄榄油",
+        "description": "特级初榨，地中海原产，健康烹饪首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["橄榄油", "进口", "特级", "健康", "烹饪"],
+        "topics": ["食品", "调料", "健康"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_034",
+        "title": "新鲜海鲜大礼包",
+        "description": "当季海鲜，新鲜直达，家庭聚餐必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["海鲜", "新鲜", "大礼包", "聚餐", "生鲜"],
+        "topics": ["食品", "海鲜", "生鲜"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_035",
+        "title": "有机坚果礼盒",
+        "description": "多种坚果组合，营养丰富，健康零食",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["坚果", "有机", "礼盒", "零食", "健康"],
+        "topics": ["食品", "零食", "健康"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_036",
+        "title": "动作大片《速度与激情10》",
+        "description": "极速飙车，惊险刺激，肾上腺素飙升",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["动作", "飙车", "惊险", "刺激", "大片"],
+        "topics": ["电影", "动作", "惊悚"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_037",
+        "title": "科幻电影《三体》",
+        "description": "刘慈欣经典科幻，震撼视效，探索宇宙奥秘",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["科幻", "三体", "刘慈欣", "宇宙", "视效"],
+        "topics": ["电影", "科幻", "小说改编"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_038",
+        "title": "悬疑电影《消失的她》",
+        "description": "烧脑剧情，层层反转，挑战推理极限",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["悬疑", "推理", "烧脑", "反转", "剧情"],
+        "topics": ["电影", "悬疑", "推理"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_039",
+        "title": "爱情电影《你的名字》",
+        "description": "新海诚经典之作，唯美画面，感人至深",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["爱情", "动画", "新海诚", "唯美", "感人"],
+        "topics": ["电影", "爱情", "动画"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_040",
+        "title": "喜剧电影《你好，李焕英》",
+        "description": "温暖治愈，笑中带泪，亲情感人",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["喜剧", "亲情", "温暖", "治愈", "感人"],
+        "topics": ["电影", "喜剧", "亲情"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_041",
+        "title": "恐怖电影《咒怨》",
+        "description": "日式恐怖经典，惊悚刺激，挑战心理极限",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["恐怖", "惊悚", "日式", "刺激", "经典"],
+        "topics": ["电影", "恐怖", "惊悚"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_042",
+        "title": "历史电影《长津湖》",
+        "description": "战争史诗，震撼场面，致敬英雄",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["历史", "战争", "史诗", "震撼", "英雄"],
+        "topics": ["电影", "历史", "战争"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_043",
+        "title": "动画电影《千与千寻》",
+        "description": "宫崎骏经典，奇幻冒险，适合全家观看",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["动画", "宫崎骏", "奇幻", "冒险", "家庭"],
+        "topics": ["电影", "动画", "奇幻"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_044",
+        "title": "犯罪电影《无间道》",
+        "description": "港片经典，卧底对决，紧张刺激",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["犯罪", "卧底", "港片", "经典", "刺激"],
+        "topics": ["电影", "犯罪", "动作"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_045",
+        "title": "科幻电影《星际穿越》",
+        "description": "诺兰经典，探索宇宙，父女情深",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["科幻", "诺兰", "宇宙", "亲情", "经典"],
+        "topics": ["电影", "科幻", "亲情"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_046",
+        "title": "音乐节门票",
+        "description": "草莓音乐节，多组艺人，现场狂欢",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["音乐节", "现场", "艺人", "狂欢", "门票"],
+        "topics": ["音乐", "现场", "娱乐"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_047",
+        "title": "周杰伦新专辑",
+        "description": "全新创作，经典曲风，粉丝必听",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["周杰伦", "专辑", "新歌", "流行", "音乐"],
+        "topics": ["音乐", "流行", "华语"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_048",
+        "title": "古典音乐CD套装",
+        "description": "贝多芬经典作品，高品质音质，收藏必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["古典", "贝多芬", "CD", "收藏", "音质"],
+        "topics": ["音乐", "古典", "收藏"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_049",
+        "title": "演唱会门票",
+        "description": "五月天演唱会，万人合唱，青春回忆",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["演唱会", "五月天", "现场", "青春", "回忆"],
+        "topics": ["音乐", "现场", "华语"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_050",
+        "title": "爵士乐专辑",
+        "description": "经典爵士，慵懒旋律，放松心情",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["爵士", "经典", "旋律", "放松", "音乐"],
+        "topics": ["音乐", "爵士", "放松"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_051",
+        "title": "摇滚音乐节",
+        "description": "多支摇滚乐队，现场激情，释放能量",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["摇滚", "音乐节", "乐队", "激情", "现场"],
+        "topics": ["音乐", "摇滚", "现场"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_052",
+        "title": "民谣专辑",
+        "description": "温暖民谣，治愈系音乐，安静聆听",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["民谣", "温暖", "治愈", "安静", "音乐"],
+        "topics": ["音乐", "民谣", "治愈"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_053",
+        "title": "电子音乐节",
+        "description": "电音狂欢，DJ现场，舞动全场",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["电音", "DJ", "狂欢", "舞动", "现场"],
+        "topics": ["音乐", "电子", "现场"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_054",
+        "title": "说唱专辑",
+        "description": "最新说唱，节奏感强，潮流音乐",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["说唱", "节奏", "潮流", "最新", "音乐"],
+        "topics": ["音乐", "说唱", "潮流"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_055",
+        "title": "钢琴独奏音乐会",
+        "description": "郎朗钢琴独奏，经典曲目，高雅艺术",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["钢琴", "郎朗", "独奏", "经典", "高雅"],
+        "topics": ["音乐", "古典", "现场"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_056",
+        "title": "蓝牙无线耳机",
+        "description": "降噪功能，长续航，高品质音质",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["耳机", "蓝牙", "降噪", "无线", "音质"],
+        "topics": ["商品", "电子产品", "音频"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_057",
+        "title": "智能手表",
+        "description": "健康监测，运动追踪，智能生活",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["手表", "智能", "健康", "运动", "监测"],
+        "topics": ["商品", "电子产品", "智能"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_058",
+        "title": "笔记本电脑",
+        "description": "高性能处理器，轻薄便携，办公学习首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["笔记本", "电脑", "高性能", "轻薄", "办公"],
+        "topics": ["商品", "电子产品", "电脑"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_059",
+        "title": "智能手机",
+        "description": "最新旗舰，拍照强大，流畅体验",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["手机", "智能", "拍照", "旗舰", "流畅"],
+        "topics": ["商品", "电子产品", "手机"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_060",
+        "title": "平板电脑",
+        "description": "大屏显示，触控流畅，娱乐办公两用",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["平板", "大屏", "触控", "娱乐", "办公"],
+        "topics": ["商品", "电子产品", "平板"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_061",
+        "title": "无线充电器",
+        "description": "快充技术，兼容多设备，便捷生活",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["充电器", "无线", "快充", "兼容", "便捷"],
+        "topics": ["商品", "电子产品", "配件"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_062",
+        "title": "智能音箱",
+        "description": "语音助手，音质出色，智能家居控制",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["音箱", "智能", "语音", "音质", "家居"],
+        "topics": ["商品", "电子产品", "智能"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_063",
+        "title": "运动相机",
+        "description": "4K拍摄，防水防抖，记录精彩瞬间",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["相机", "运动", "4K", "防水", "拍摄"],
+        "topics": ["商品", "电子产品", "相机"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_064",
+        "title": "游戏手柄",
+        "description": "专业电竞，精准操控，游戏体验升级",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["手柄", "游戏", "电竞", "操控", "体验"],
+        "topics": ["商品", "电子产品", "游戏"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_065",
+        "title": "机械键盘",
+        "description": "青轴手感，RGB背光，打字游戏两用",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["键盘", "机械", "青轴", "背光", "游戏"],
+        "topics": ["商品", "电子产品", "外设"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_066",
+        "title": "时尚休闲T恤",
+        "description": "纯棉材质，舒适透气，多色可选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["T恤", "休闲", "纯棉", "舒适", "时尚"],
+        "topics": ["商品", "服装", "休闲"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_067",
+        "title": "商务正装衬衫",
+        "description": "免烫面料，版型修身，职场必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["衬衫", "正装", "免烫", "商务", "职场"],
+        "topics": ["商品", "服装", "正装"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_068",
+        "title": "运动鞋",
+        "description": "缓震科技，透气舒适，运动健身首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["运动鞋", "缓震", "透气", "运动", "健身"],
+        "topics": ["商品", "服装", "运动"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_069",
+        "title": "冬季羽绒服",
+        "description": "90%白鸭绒，保暖防风，冬季必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["羽绒服", "保暖", "防风", "冬季", "白鸭绒"],
+        "topics": ["商品", "服装", "冬季"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_070",
+        "title": "牛仔裤",
+        "description": "经典版型，弹力面料，百搭单品",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["牛仔裤", "经典", "弹力", "百搭", "时尚"],
+        "topics": ["商品", "服装", "休闲"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_071",
+        "title": "真丝连衣裙",
+        "description": "优雅设计，舒适面料，聚会约会首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["连衣裙", "真丝", "优雅", "舒适", "聚会"],
+        "topics": ["商品", "服装", "女装"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_072",
+        "title": "休闲背包",
+        "description": "大容量设计，防水材质，旅行通勤必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["背包", "休闲", "大容量", "防水", "旅行"],
+        "topics": ["商品", "服装", "配饰"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_073",
+        "title": "智能家居套装",
+        "description": "智能灯光、温控、安防，一键控制全屋",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["智能家居", "灯光", "温控", "安防", "控制"],
+        "topics": ["商品", "家居", "智能"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_074",
+        "title": "北欧风格沙发",
+        "description": "简约设计，舒适坐感，客厅首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["沙发", "北欧", "简约", "舒适", "客厅"],
+        "topics": ["商品", "家居", "家具"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_075",
+        "title": "记忆棉床垫",
+        "description": "贴合身体曲线，深度睡眠，健康生活",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["床垫", "记忆棉", "贴合", "睡眠", "健康"],
+        "topics": ["商品", "家居", "家具"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_076",
+        "title": "空气净化器",
+        "description": "高效过滤，静音运行，清新空气",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["净化器", "空气", "过滤", "静音", "清新"],
+        "topics": ["商品", "家居", "电器"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_077",
+        "title": "智能扫地机器人",
+        "description": "自动清扫，智能规划，解放双手",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["扫地机器人", "自动", "智能", "清扫", "解放"],
+        "topics": ["商品", "家居", "智能"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_078",
+        "title": "咖啡机",
+        "description": "意式浓缩，一键操作，在家享受咖啡店品质",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["咖啡机", "意式", "浓缩", "操作", "品质"],
+        "topics": ["商品", "家居", "电器"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_079",
+        "title": "加湿器",
+        "description": "大容量水箱，静音运行，改善室内湿度",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["加湿器", "大容量", "静音", "湿度", "改善"],
+        "topics": ["商品", "家居", "电器"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_080",
+        "title": "电动牙刷",
+        "description": "声波震动，多档调节，深度清洁",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["牙刷", "电动", "声波", "震动", "清洁"],
+        "topics": ["商品", "家居", "个护"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_081",
+        "title": "护肤精华套装",
+        "description": "抗衰老配方，深层滋养，焕发年轻光彩",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["护肤", "精华", "抗衰老", "滋养", "年轻"],
+        "topics": ["商品", "美妆", "护肤"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_082",
+        "title": "口红套装",
+        "description": "多色可选，持久不脱色，打造完美唇妆",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["口红", "套装", "持久", "不脱色", "唇妆"],
+        "topics": ["商品", "美妆", "彩妆"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_083",
+        "title": "防晒霜",
+        "description": "SPF50+，防水防汗，户外必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["防晒", "SPF50", "防水", "防汗", "户外"],
+        "topics": ["商品", "美妆", "护肤"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_084",
+        "title": "面膜套装",
+        "description": "多种功效，补水保湿，焕亮肌肤",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["面膜", "套装", "补水", "保湿", "焕亮"],
+        "topics": ["商品", "美妆", "护肤"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_085",
+        "title": "香水",
+        "description": "法国原产，持久留香，优雅气质",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["香水", "法国", "留香", "优雅", "气质"],
+        "topics": ["商品", "美妆", "香水"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_086",
+        "title": "跑步机",
+        "description": "静音设计，多档速度，在家轻松健身",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["跑步机", "静音", "速度", "健身", "运动"],
+        "topics": ["商品", "运动", "健身"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_087",
+        "title": "瑜伽垫",
+        "description": "防滑材质，加厚设计，瑜伽健身必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["瑜伽垫", "防滑", "加厚", "瑜伽", "健身"],
+        "topics": ["商品", "运动", "健身"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_088",
+        "title": "哑铃套装",
+        "description": "可调节重量，多种训练，塑造完美身材",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["哑铃", "可调节", "训练", "身材", "健身"],
+        "topics": ["商品", "运动", "健身"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_089",
+        "title": "智能体脂秤",
+        "description": "精准测量，APP同步，健康管理",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["体脂秤", "智能", "测量", "APP", "健康"],
+        "topics": ["商品", "运动", "健康"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_090",
+        "title": "健身环",
+        "description": "游戏化健身，趣味运动，坚持锻炼",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["健身环", "游戏", "趣味", "运动", "锻炼"],
+        "topics": ["商品", "运动", "游戏"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_091",
+        "title": "在线视频剪辑工具",
+        "description": "简单易用，多格式支持，专业级效果",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["视频", "剪辑", "在线", "简单", "专业"],
+        "topics": ["工具", "视频", "编辑"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_092",
+        "title": "云端存储服务",
+        "description": "大容量存储，多设备同步，数据安全",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["存储", "云端", "同步", "安全", "容量"],
+        "topics": ["工具", "存储", "云端"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_093",
+        "title": "密码管理工具",
+        "description": "安全加密，一键登录，保护账户安全",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["密码", "管理", "加密", "安全", "登录"],
+        "topics": ["工具", "安全", "软件"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_094",
+        "title": "时间管理APP",
+        "description": "番茄工作法，专注提醒，提升工作效率",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["时间", "管理", "番茄", "专注", "效率"],
+        "topics": ["工具", "效率", "软件"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_095",
+        "title": "在线翻译工具",
+        "description": "多语言支持，实时翻译，准确流畅",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["翻译", "在线", "多语言", "实时", "准确"],
+        "topics": ["工具", "翻译", "软件"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_096",
+        "title": "代码编辑器",
+        "description": "智能提示，多语言支持，开发必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["代码", "编辑器", "智能", "开发", "编程"],
+        "topics": ["工具", "开发", "软件"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_097",
+        "title": "数据分析工具",
+        "description": "可视化图表，多数据源，商业分析",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["数据", "分析", "可视化", "图表", "商业"],
+        "topics": ["工具", "数据", "分析"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_098",
+        "title": "在线会议平台",
+        "description": "高清视频，多人协作，远程办公首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["会议", "在线", "视频", "协作", "远程"],
+        "topics": ["工具", "协作", "平台"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_099",
+        "title": "邮件营销工具",
+        "description": "模板丰富，数据分析，营销推广",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["邮件", "营销", "模板", "数据", "推广"],
+        "topics": ["工具", "营销", "软件"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_100",
+        "title": "流程图制作工具",
+        "description": "拖拽操作，多种模板，专业图表",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["流程图", "拖拽", "模板", "图表", "专业"],
+        "topics": ["工具", "设计", "软件"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_101",
+        "title": "白兰地",
+        "description": "法国干邑，醇厚口感，商务宴请首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["白兰地", "干邑", "法国", "醇厚", "商务"],
+        "topics": ["酒水", "白兰地", "进口"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_102",
+        "title": "伏特加",
+        "description": "俄罗斯原产，纯净口感，调酒必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["伏特加", "俄罗斯", "纯净", "调酒", "烈酒"],
+        "topics": ["酒水", "伏特加", "烈酒"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_103",
+        "title": "朗姆酒",
+        "description": "加勒比海原产，热带风情，鸡尾酒首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["朗姆酒", "加勒比", "热带", "鸡尾酒", "调酒"],
+        "topics": ["酒水", "朗姆酒", "调酒"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_104",
+        "title": "龙舌兰",
+        "description": "墨西哥原产，独特风味，派对必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["龙舌兰", "墨西哥", "独特", "派对", "烈酒"],
+        "topics": ["酒水", "龙舌兰", "烈酒"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_105",
+        "title": "日本威士忌",
+        "description": "山崎单一麦芽，日式工艺，收藏品鉴",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["威士忌", "日本", "山崎", "单一麦芽", "收藏"],
+        "topics": ["酒水", "威士忌", "进口"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_106",
+        "title": "果酒礼盒",
+        "description": "多种水果口味，低度酒精，适合女性",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["果酒", "水果", "低度", "女性", "礼盒"],
+        "topics": ["酒水", "果酒", "低度"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_107",
+        "title": "黄酒",
+        "description": "绍兴原产，传统工艺，温润醇厚",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["黄酒", "绍兴", "传统", "温润", "醇厚"],
+        "topics": ["酒水", "黄酒", "传统"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_108",
+        "title": "白酒",
+        "description": "茅台镇原产，酱香型，商务宴请",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["白酒", "茅台", "酱香", "商务", "宴请"],
+        "topics": ["酒水", "白酒", "传统"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_109",
+        "title": "米酒",
+        "description": "手工酿造，甜润口感，传统饮品",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["米酒", "手工", "甜润", "传统", "饮品"],
+        "topics": ["酒水", "米酒", "传统"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_110",
+        "title": "预调鸡尾酒",
+        "description": "多种口味，即开即饮，派对聚会",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["鸡尾酒", "预调", "即饮", "派对", "聚会"],
+        "topics": ["酒水", "鸡尾酒", "低度"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_111",
+        "title": "有机燕麦片",
+        "description": "营养早餐，低脂健康，快速便捷",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["燕麦", "有机", "早餐", "营养", "健康"],
+        "topics": ["食品", "早餐", "健康"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_112",
+        "title": "进口车厘子",
+        "description": "智利进口，个大饱满，甜脆多汁",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["车厘子", "进口", "智利", "新鲜", "水果"],
+        "topics": ["食品", "水果", "进口"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_113",
+        "title": "手工曲奇饼干",
+        "description": "黄油制作，酥脆香甜，下午茶首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["曲奇", "手工", "黄油", "酥脆", "下午茶"],
+        "topics": ["食品", "零食", "烘焙"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_114",
+        "title": "进口车厘子",
+        "description": "智利进口，个大饱满，甜脆多汁",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["车厘子", "进口", "智利", "新鲜", "水果"],
+        "topics": ["食品", "水果", "进口"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_115",
+        "title": "速冻水饺",
+        "description": "手工包制，多种馅料，方便快捷",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["水饺", "速冻", "手工", "馅料", "方便"],
+        "topics": ["食品", "速食", "面食"],
+        "priority": 6
+      },
+      {
+        "ad_id": "ad_116",
+        "title": "科幻电影《沙丘》",
+        "description": "史诗级科幻巨制，震撼视效，探索未知世界",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["科幻", "沙丘", "史诗", "视效", "大片"],
+        "topics": ["电影", "科幻", "史诗"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_117",
+        "title": "爱情电影《泰坦尼克号》",
+        "description": "经典爱情巨制，感人至深，永恒经典",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["爱情", "泰坦尼克", "经典", "感人", "永恒"],
+        "topics": ["电影", "爱情", "经典"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_118",
+        "title": "动作电影《碟中谍7》",
+        "description": "阿汤哥回归，惊险特技，动作大片",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["动作", "碟中谍", "特技", "惊险", "大片"],
+        "topics": ["电影", "动作", "惊悚"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_119",
+        "title": "动画电影《寻梦环游记》",
+        "description": "皮克斯经典，温暖治愈，适合全家观看",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["动画", "寻梦", "皮克斯", "温暖", "家庭"],
+        "topics": ["电影", "动画", "家庭"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_120",
+        "title": "悬疑电影《看不见的客人》",
+        "description": "西班牙悬疑经典，烧脑反转，挑战推理",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["悬疑", "西班牙", "烧脑", "反转", "推理"],
+        "topics": ["电影", "悬疑", "推理"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_121",
+        "title": "流行音乐专辑",
+        "description": "最新流行单曲，节奏感强，时尚潮流",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["流行", "音乐", "单曲", "节奏", "潮流"],
+        "topics": ["音乐", "流行", "时尚"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_122",
+        "title": "古典音乐CD",
+        "description": "莫扎特经典作品，高品质音质，收藏必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["古典", "莫扎特", "CD", "音质", "收藏"],
+        "topics": ["音乐", "古典", "收藏"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_123",
+        "title": "摇滚专辑",
+        "description": "重金属摇滚，激情四射，释放能量",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["摇滚", "重金属", "激情", "能量", "音乐"],
+        "topics": ["音乐", "摇滚", "激情"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_124",
+        "title": "民谣音乐会",
+        "description": "温暖民谣，现场演出，安静聆听",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["民谣", "音乐会", "现场", "温暖", "安静"],
+        "topics": ["音乐", "民谣", "现场"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_125",
+        "title": "电音专辑",
+        "description": "电子音乐，动感节奏，舞动全场",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["电音", "电子", "节奏", "动感", "舞动"],
+        "topics": ["音乐", "电子", "动感"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_126",
+        "title": "智能电视",
+        "description": "4K超清，智能系统，家庭娱乐中心",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["电视", "智能", "4K", "超清", "娱乐"],
+        "topics": ["商品", "电子产品", "家电"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_127",
+        "title": "无线鼠标",
+        "description": "人体工学设计，精准定位，办公游戏两用",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["鼠标", "无线", "人体工学", "精准", "办公"],
+        "topics": ["商品", "电子产品", "外设"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_128",
+        "title": "智能门锁",
+        "description": "指纹识别，密码开锁，安全便捷",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["门锁", "智能", "指纹", "密码", "安全"],
+        "topics": ["商品", "家居", "智能"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_129",
+        "title": "空气炸锅",
+        "description": "健康烹饪，少油少脂，美食轻松做",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["空气炸锅", "健康", "烹饪", "少油", "美食"],
+        "topics": ["商品", "家居", "电器"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_130",
+        "title": "吸尘器",
+        "description": "强劲吸力，无线设计，轻松清洁",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["吸尘器", "吸力", "无线", "清洁", "便捷"],
+        "topics": ["商品", "家居", "电器"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_131",
+        "title": "智能马桶",
+        "description": "自动冲洗，座圈加热，舒适体验",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["马桶", "智能", "冲洗", "加热", "舒适"],
+        "topics": ["商品", "家居", "智能"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_132",
+        "title": "投影仪",
+        "description": "高清投影，大屏体验，家庭影院",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["投影仪", "高清", "大屏", "影院", "体验"],
+        "topics": ["商品", "电子产品", "家电"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_133",
+        "title": "多肉植物组合套装",
+        "description": "精选多肉品种，易养护，适合新手，装饰家居",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["多肉", "植物", "盆栽", "装饰", "养护"],
+        "topics": ["植物", "花卉", "家居"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_134",
+        "title": "玫瑰盆栽",
+        "description": "四季开花，花香浓郁，浪漫首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["玫瑰", "花卉", "盆栽", "浪漫", "花香"],
+        "topics": ["植物", "花卉", "园艺"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_135",
+        "title": "绿萝净化空气",
+        "description": "室内绿植，净化空气，易养护，新手友好",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["绿萝", "绿植", "净化", "空气", "室内"],
+        "topics": ["植物", "绿植", "家居"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_136",
+        "title": "兰花精品",
+        "description": "优雅兰花，花期长，适合室内摆放",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["兰花", "花卉", "优雅", "精品", "室内"],
+        "topics": ["植物", "花卉", "园艺"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_137",
+        "title": "发财树盆栽",
+        "description": "寓意吉祥，净化空气，办公室首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["发财树", "绿植", "寓意", "办公室", "净化"],
+        "topics": ["植物", "绿植", "风水"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_138",
+        "title": "吊兰垂吊植物",
+        "description": "垂吊美观，净化空气，适合悬挂装饰",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["吊兰", "垂吊", "绿植", "装饰", "净化"],
+        "topics": ["植物", "绿植", "家居"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_139",
+        "title": "茉莉花盆栽",
+        "description": "花香清雅，夜间开花，适合阳台种植",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["茉莉", "花卉", "花香", "阳台", "清雅"],
+        "topics": ["植物", "花卉", "园艺"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_140",
+        "title": "虎皮兰净化王",
+        "description": "超强净化能力，夜间释放氧气，卧室首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["虎皮兰", "净化", "氧气", "卧室", "绿植"],
+        "topics": ["植物", "绿植", "健康"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_141",
+        "title": "文竹盆景",
+        "description": "文雅清秀，适合书房，提升品味",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["文竹", "盆景", "文雅", "书房", "装饰"],
+        "topics": ["植物", "盆景", "家居"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_142",
+        "title": "仙人掌多肉组合",
+        "description": "耐旱易养，防辐射，桌面小盆栽",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["仙人掌", "多肉", "耐旱", "防辐射", "桌面"],
+        "topics": ["植物", "多肉", "办公"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_143",
+        "title": "富贵竹水培",
+        "description": "水培易养，寓意富贵，办公室绿植",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["富贵竹", "水培", "寓意", "办公室", "绿植"],
+        "topics": ["植物", "绿植", "风水"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_144",
+        "title": "月季花苗",
+        "description": "四季开花，品种丰富，适合庭院种植",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["月季", "花苗", "四季", "庭院", "种植"],
+        "topics": ["植物", "花卉", "园艺"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_145",
+        "title": "薄荷盆栽",
+        "description": "可食用，清香提神，阳台种植首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["薄荷", "可食用", "清香", "阳台", "提神"],
+        "topics": ["植物", "香草", "食品"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_146",
+        "title": "金边吊兰",
+        "description": "金边美观，净化空气，易养护",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["金边吊兰", "美观", "净化", "易养", "绿植"],
+        "topics": ["植物", "绿植", "家居"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_147",
+        "title": "蝴蝶兰精品",
+        "description": "优雅高贵，花期长，节日送礼首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["蝴蝶兰", "优雅", "花期", "礼品", "花卉"],
+        "topics": ["植物", "花卉", "礼品"],
+        "priority": 10
+      },
+      {
+        "ad_id": "ad_148",
+        "title": "铜钱草水培",
+        "description": "圆叶可爱，水培易养，桌面小绿植",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["铜钱草", "水培", "圆叶", "桌面", "可爱"],
+        "topics": ["植物", "绿植", "办公"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_149",
+        "title": "薰衣草种子",
+        "description": "芳香植物，助眠安神，适合阳台种植",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["薰衣草", "种子", "芳香", "助眠", "阳台"],
+        "topics": ["植物", "香草", "园艺"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_150",
+        "title": "龟背竹大型绿植",
+        "description": "大型绿植，净化空气，客厅装饰",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["龟背竹", "大型", "绿植", "客厅", "净化"],
+        "topics": ["植物", "绿植", "家居"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_151",
+        "title": "波斯菊种子",
+        "description": "易种易活，花色丰富，适合新手",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["波斯菊", "种子", "易种", "花色", "新手"],
+        "topics": ["植物", "花卉", "园艺"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_152",
+        "title": "金鱼草盆栽",
+        "description": "可爱造型，适合儿童房，易养护",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["金鱼草", "可爱", "儿童", "易养", "盆栽"],
+        "topics": ["植物", "花卉", "儿童"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_153",
+        "title": "猫粮全价营养",
+        "description": "天然配方，营养均衡，呵护猫咪健康",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["猫粮", "营养", "天然", "健康", "猫咪"],
+        "topics": ["动物", "宠物", "食品"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_154",
+        "title": "狗粮成犬专用",
+        "description": "高蛋白配方，增强免疫力，适口性好",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["狗粮", "成犬", "蛋白", "免疫", "健康"],
+        "topics": ["动物", "宠物", "食品"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_155",
+        "title": "宠物猫窝",
+        "description": "舒适保暖，可拆洗，四季通用",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["猫窝", "舒适", "保暖", "拆洗", "宠物"],
+        "topics": ["动物", "宠物", "用品"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_156",
+        "title": "宠物狗玩具",
+        "description": "耐咬安全，互动益智，陪伴爱犬",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["狗玩具", "耐咬", "安全", "互动", "益智"],
+        "topics": ["动物", "宠物", "玩具"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_157",
+        "title": "观赏鱼缸套装",
+        "description": "超白玻璃，过滤系统，打造水族世界",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["鱼缸", "观赏", "过滤", "水族", "套装"],
+        "topics": ["动物", "宠物", "水族"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_158",
+        "title": "热带鱼饲料",
+        "description": "营养丰富，增强色彩，适合各类热带鱼",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["鱼饲料", "热带鱼", "营养", "色彩", "水族"],
+        "topics": ["动物", "宠物", "食品"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_159",
+        "title": "仓鼠笼子套装",
+        "description": "空间宽敞，配件齐全，适合小宠",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["仓鼠笼", "宽敞", "套装", "小宠", "配件"],
+        "topics": ["动物", "宠物", "用品"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_160",
+        "title": "鹦鹉鸟笼",
+        "description": "大型鸟笼，空间充足，适合中大型鹦鹉",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["鸟笼", "鹦鹉", "大型", "空间", "鸟类"],
+        "topics": ["动物", "宠物", "用品"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_161",
+        "title": "宠物洗护用品",
+        "description": "温和配方，深层清洁，呵护宠物皮肤",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["洗护", "温和", "清洁", "皮肤", "宠物"],
+        "topics": ["动物", "宠物", "用品"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_162",
+        "title": "宠物牵引绳",
+        "description": "安全舒适，可调节长度，遛狗必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["牵引绳", "安全", "可调", "遛狗", "宠物"],
+        "topics": ["动物", "宠物", "用品"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_163",
+        "title": "兔子草料",
+        "description": "新鲜干草，营养丰富，适合兔子日常",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["草料", "兔子", "干草", "营养", "新鲜"],
+        "topics": ["动物", "宠物", "食品"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_164",
+        "title": "宠物医疗用品",
+        "description": "常用药品，应急处理，守护宠物健康",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["医疗", "药品", "应急", "健康", "宠物"],
+        "topics": ["动物", "宠物", "医疗"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_165",
+        "title": "花盆陶瓷套装",
+        "description": "精美陶瓷，透气性好，适合各类植物",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["花盆", "陶瓷", "透气", "精美", "套装"],
+        "topics": ["植物", "园艺", "用品"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_166",
+        "title": "园艺工具套装",
+        "description": "专业工具，修剪施肥，园艺必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["园艺工具", "专业", "修剪", "施肥", "套装"],
+        "topics": ["植物", "园艺", "工具"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_167",
+        "title": "有机花肥",
+        "description": "天然有机，促进生长，安全环保",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["花肥", "有机", "天然", "生长", "环保"],
+        "topics": ["植物", "园艺", "肥料"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_168",
+        "title": "自动浇水器",
+        "description": "智能定时，自动浇水，解放双手",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["浇水器", "智能", "定时", "自动", "方便"],
+        "topics": ["植物", "园艺", "智能"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_169",
+        "title": "种子大礼包",
+        "description": "多种蔬菜种子，适合阳台种植，自给自足",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["种子", "蔬菜", "阳台", "种植", "礼包"],
+        "topics": ["植物", "园艺", "食品"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_170",
+        "title": "营养土配方",
+        "description": "科学配比，营养丰富，适合各类植物",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["营养土", "配方", "科学", "营养", "植物"],
+        "topics": ["植物", "园艺", "土壤"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_171",
+        "title": "花架置物架",
+        "description": "多层设计，节省空间，展示植物",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["花架", "置物架", "多层", "空间", "展示"],
+        "topics": ["植物", "园艺", "家居"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_172",
+        "title": "植物补光灯",
+        "description": "全光谱LED，促进生长，室内种植必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["补光灯", "LED", "全光谱", "生长", "室内"],
+        "topics": ["植物", "园艺", "电器"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_173",
+        "title": "水培营养液",
+        "description": "专业配方，水培植物专用，促进根系生长",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["营养液", "水培", "专业", "根系", "生长"],
+        "topics": ["植物", "园艺", "肥料"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_174",
+        "title": "防虫网罩",
+        "description": "保护植物，防止虫害，透气透光",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["防虫网", "保护", "虫害", "透气", "植物"],
+        "topics": ["植物", "园艺", "防护"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_175",
+        "title": "宠物智能喂食器",
+        "description": "定时定量，远程控制，科学喂养",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["喂食器", "智能", "定时", "远程", "科学"],
+        "topics": ["动物", "宠物", "智能"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_176",
+        "title": "宠物摄像头",
+        "description": "实时监控，双向语音，随时关注爱宠",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["摄像头", "监控", "语音", "实时", "宠物"],
+        "topics": ["动物", "宠物", "智能"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_177",
+        "title": "宠物项圈定位",
+        "description": "GPS定位，防走失，守护爱宠安全",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["项圈", "GPS", "定位", "防走失", "安全"],
+        "topics": ["动物", "宠物", "智能"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_178",
+        "title": "宠物训练用品",
+        "description": "专业训练，行为纠正，培养好习惯",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["训练", "行为", "纠正", "习惯", "宠物"],
+        "topics": ["动物", "宠物", "训练"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_179",
+        "title": "观赏鸟饲料",
+        "description": "营养均衡，增强羽毛光泽，适合各类观赏鸟",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["鸟饲料", "营养", "羽毛", "光泽", "观赏"],
+        "topics": ["动物", "宠物", "食品"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_180",
+        "title": "宠物保险服务",
+        "description": "医疗保障，意外保障，守护宠物健康",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["保险", "医疗", "保障", "健康", "宠物"],
+        "topics": ["动物", "宠物", "服务"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_181",
+        "title": "经典可乐",
+        "description": "经典口味，冰爽畅快，聚会必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["可乐", "经典", "冰爽", "聚会", "碳酸"],
+        "topics": ["饮料", "碳酸", "经典"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_182",
+        "title": "无糖绿茶",
+        "description": "天然茶香，无糖健康，清爽解腻",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["绿茶", "无糖", "健康", "清爽", "茶香"],
+        "topics": ["饮料", "茶饮", "健康"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_183",
+        "title": "现磨咖啡",
+        "description": "精选咖啡豆，现磨现煮，香浓醇厚",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["咖啡", "现磨", "香浓", "醇厚", "精选"],
+        "topics": ["饮料", "咖啡", "精品"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_184",
+        "title": "100%纯果汁",
+        "description": "新鲜水果，无添加，营养丰富",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["果汁", "纯果汁", "新鲜", "无添加", "营养"],
+        "topics": ["饮料", "果汁", "健康"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_185",
+        "title": "能量饮料",
+        "description": "提神醒脑，补充能量，运动健身必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["能量", "提神", "运动", "健身", "补充"],
+        "topics": ["饮料", "功能", "运动"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_186",
+        "title": "珍珠奶茶",
+        "description": "Q弹珍珠，香浓奶茶，经典搭配",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["奶茶", "珍珠", "Q弹", "香浓", "经典"],
+        "topics": ["饮料", "奶茶", "甜品"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_187",
+        "title": "酸奶饮品",
+        "description": "活性益生菌，促进消化，健康美味",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["酸奶", "益生菌", "消化", "健康", "美味"],
+        "topics": ["饮料", "乳制品", "健康"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_188",
+        "title": "天然矿泉水",
+        "description": "天然水源，纯净甘甜，日常饮用",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["矿泉水", "天然", "纯净", "甘甜", "日常"],
+        "topics": ["饮料", "水", "健康"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_189",
+        "title": "气泡水",
+        "description": "清爽气泡，无糖零卡，时尚健康",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["气泡水", "清爽", "无糖", "零卡", "时尚"],
+        "topics": ["饮料", "气泡", "健康"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_190",
+        "title": "柠檬蜂蜜茶",
+        "description": "维C丰富，润喉养颜，温暖治愈",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["柠檬", "蜂蜜", "维C", "润喉", "养颜"],
+        "topics": ["饮料", "茶饮", "健康"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_191",
+        "title": "速溶咖啡",
+        "description": "即冲即饮，香浓便捷，办公首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["速溶", "咖啡", "便捷", "办公", "香浓"],
+        "topics": ["饮料", "咖啡", "便捷"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_192",
+        "title": "乌龙茶",
+        "description": "清香淡雅，回甘悠长，茶中精品",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["乌龙茶", "清香", "淡雅", "回甘", "精品"],
+        "topics": ["饮料", "茶饮", "传统"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_193",
+        "title": "运动饮料",
+        "description": "电解质补充，快速恢复，运动后必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["运动", "电解质", "恢复", "补充", "快速"],
+        "topics": ["饮料", "功能", "运动"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_194",
+        "title": "鲜榨橙汁",
+        "description": "新鲜橙子，现榨现饮，维C满满",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["橙汁", "鲜榨", "新鲜", "维C", "现榨"],
+        "topics": ["饮料", "果汁", "新鲜"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_195",
+        "title": "椰汁饮品",
+        "description": "天然椰汁，清甜爽口，热带风情",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["椰汁", "天然", "清甜", "爽口", "热带"],
+        "topics": ["饮料", "果汁", "天然"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_196",
+        "title": "红豆奶茶",
+        "description": "软糯红豆，香浓奶茶，经典组合",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["红豆", "奶茶", "软糯", "香浓", "经典"],
+        "topics": ["饮料", "奶茶", "甜品"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_197",
+        "title": "冰红茶",
+        "description": "冰爽解渴，茶香浓郁，夏日首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["冰红茶", "冰爽", "解渴", "茶香", "夏日"],
+        "topics": ["饮料", "茶饮", "夏日"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_198",
+        "title": "拿铁咖啡",
+        "description": "香浓咖啡，丝滑奶泡，意式经典",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["拿铁", "咖啡", "香浓", "奶泡", "意式"],
+        "topics": ["饮料", "咖啡", "精品"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_199",
+        "title": "酸梅汤",
+        "description": "传统配方，酸甜开胃，消暑解腻",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["酸梅汤", "传统", "酸甜", "开胃", "消暑"],
+        "topics": ["饮料", "传统", "夏日"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_200",
+        "title": "芒果汁",
+        "description": "浓郁芒果，香甜可口，热带风味",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["芒果汁", "浓郁", "香甜", "热带", "风味"],
+        "topics": ["饮料", "果汁", "热带"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_201",
+        "title": "抹茶拿铁",
+        "description": "日式抹茶，香浓奶泡，清新淡雅",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["抹茶", "拿铁", "日式", "清新", "淡雅"],
+        "topics": ["饮料", "咖啡", "日式"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_202",
+        "title": "苹果醋",
+        "description": "天然发酵，助消化，健康养生",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["苹果醋", "发酵", "消化", "健康", "养生"],
+        "topics": ["饮料", "健康", "养生"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_203",
+        "title": "雪碧",
+        "description": "清爽柠檬，冰爽畅快，夏日解渴",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["雪碧", "清爽", "柠檬", "冰爽", "解渴"],
+        "topics": ["饮料", "碳酸", "夏日"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_204",
+        "title": "花草茶",
+        "description": "天然花草，清香淡雅，舒缓放松",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["花草茶", "天然", "清香", "舒缓", "放松"],
+        "topics": ["饮料", "茶饮", "健康"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_205",
+        "title": "黑糖珍珠奶茶",
+        "description": "黑糖香甜，珍珠Q弹，经典升级",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["黑糖", "珍珠", "奶茶", "香甜", "Q弹"],
+        "topics": ["饮料", "奶茶", "甜品"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_206",
+        "title": "维C泡腾片",
+        "description": "快速溶解，补充维C，增强免疫力",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["维C", "泡腾片", "溶解", "免疫", "补充"],
+        "topics": ["饮料", "功能", "健康"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_207",
+        "title": "苏打水",
+        "description": "弱碱性，中和胃酸，健康饮品",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["苏打水", "弱碱", "中和", "胃酸", "健康"],
+        "topics": ["饮料", "水", "健康"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_208",
+        "title": "卡布奇诺",
+        "description": "意式经典，香浓咖啡，绵密奶泡",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["卡布奇诺", "意式", "香浓", "奶泡", "经典"],
+        "topics": ["饮料", "咖啡", "意式"],
+        "priority": 9
+      },
+      {
+        "ad_id": "ad_209",
+        "title": "蜂蜜柚子茶",
+        "description": "润燥养颜，酸甜可口，秋冬必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["蜂蜜", "柚子", "润燥", "养颜", "秋冬"],
+        "topics": ["饮料", "茶饮", "养生"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_210",
+        "title": "草莓奶昔",
+        "description": "新鲜草莓，香浓牛奶，甜蜜享受",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["草莓", "奶昔", "新鲜", "香浓", "甜蜜"],
+        "topics": ["饮料", "奶昔", "甜品"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_211",
+        "title": "凉茶",
+        "description": "传统配方，清热降火，四季皆宜",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["凉茶", "传统", "清热", "降火", "四季"],
+        "topics": ["饮料", "茶饮", "传统"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_212",
+        "title": "美式咖啡",
+        "description": "纯正黑咖啡，浓郁醇厚，提神醒脑",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["美式", "咖啡", "黑咖啡", "浓郁", "提神"],
+        "topics": ["饮料", "咖啡", "经典"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_213",
+        "title": "葡萄汁",
+        "description": "新鲜葡萄，浓郁果香，营养丰富",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["葡萄汁", "新鲜", "果香", "浓郁", "营养"],
+        "topics": ["饮料", "果汁", "新鲜"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_214",
+        "title": "柠檬水",
+        "description": "清新柠檬，解腻开胃，夏日清爽",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["柠檬水", "清新", "解腻", "开胃", "清爽"],
+        "topics": ["饮料", "果汁", "夏日"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_215",
+        "title": "燕麦拿铁",
+        "description": "植物奶香，丝滑口感，健康新选择",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["燕麦", "拿铁", "植物", "丝滑", "健康"],
+        "topics": ["饮料", "咖啡", "健康"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_216",
+        "title": "冬瓜茶",
+        "description": "传统饮品，清热解暑，夏日必备",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["冬瓜茶", "传统", "清热", "解暑", "夏日"],
+        "topics": ["饮料", "茶饮", "传统"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_217",
+        "title": "气泡果汁",
+        "description": "果味气泡，清爽刺激，新潮饮品",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["气泡", "果汁", "果味", "清爽", "新潮"],
+        "topics": ["饮料", "气泡", "果汁"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_218",
+        "title": "姜茶",
+        "description": "暖胃驱寒，温润滋补，秋冬暖饮",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["姜茶", "暖胃", "驱寒", "温润", "秋冬"],
+        "topics": ["饮料", "茶饮", "养生"],
+        "priority": 7
+      },
+      {
+        "ad_id": "ad_219",
+        "title": "冷萃咖啡",
+        "description": "低温萃取，口感顺滑，低酸度",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["冷萃", "咖啡", "低温", "顺滑", "低酸"],
+        "topics": ["饮料", "咖啡", "精品"],
+        "priority": 8
+      },
+      {
+        "ad_id": "ad_220",
+        "title": "西瓜汁",
+        "description": "新鲜西瓜，清甜解渴，夏日首选",
+        "image_url": "",
+        "link_url": "",
+        "keywords": ["西瓜汁", "新鲜", "清甜", "解渴", "夏日"],
+        "topics": ["饮料", "果汁", "夏日"],
+        "priority": 8
+      }
+    ]
+}
