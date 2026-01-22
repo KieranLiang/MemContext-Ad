@@ -43,22 +43,31 @@ class OpenAIClient:
         self.executor = ThreadPoolExecutor(max_workers=max_workers)
         self._lock = threading.Lock()
 
-    def chat_completion(self, model, messages, temperature=0.7, max_tokens=2000):
-        print(f"Calling OpenAI API. Model: {model}")
+    def chat_completion(self, model, messages, temperature=0.7, max_tokens=2000, stream=False):
+        """
+        增加 stream 参数支持流式输出
+        """
+        print(f"Calling OpenAI API. Model: {model} (Stream: {stream})")
         try:
             response = self.client.chat.completions.create(
                 model=model,
                 messages=messages,
                 temperature=temperature,
-                max_tokens=max_tokens
+                max_tokens=max_tokens,
+                stream=stream  # 传 stream 参数
             )
+            
+            # 如果是流式，直接返回生成器对象，不要去读取 content
+            if stream:
+                return response
+
+            # 如果不是流式，保持原有逻辑
             raw_content = response.choices[0].message.content.strip()
-            # 自动清理推理模型的<think>标签
             cleaned_content = clean_reasoning_model_output(raw_content)
             return cleaned_content
+            
         except Exception as e:
             print(f"Error calling OpenAI API: {e}")
-            # Fallback or error handling
             return "Error: Could not get response from LLM."
 
     def chat_completion_async(self, model, messages, temperature=0.7, max_tokens=2000):

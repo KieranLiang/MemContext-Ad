@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, request, jsonify, session
+from flask import Flask, render_template, request, jsonify, session,Response, stream_with_context
+from concurrent.futures import ThreadPoolExecutor
+executor = ThreadPoolExecutor(max_workers=5)
+
 import sys
 import os
 import json
@@ -39,6 +42,7 @@ with open('./memdemo/ad_data/ad_demo_format.json', 'r', encoding='utf-8') as f:
 with open('./memdemo/ad_data/forbidden_keywords.json', 'r', encoding='utf-8') as f: 
     forbidden_keywords = json.load(f)
     forbidden_keywords = forbidden_keywords["forbidden_keywords"]
+
 interest_log = {}
 
 
@@ -168,99 +172,110 @@ def chat():
     
     memory_system = memory_systems[session_id]
 
-    def advertise(user_id,interest_tag):
+    def advertise(mem_sys, uid, tags, current_input):
         recommended_ads = [] 
+        rec_topics = set()
+        rec_keywords = set()
 
-        if not interest_tag or not user_id:
-            return jsonify({'error': 'Both interest_tag and user_id are required.'}), 400
+        if not tags or not uid:
+            return []
         
-        # 1. 记录 Interest 
-        if user_id not in interest_log:
-            interest_log[user_id] = []
-        interest_log[user_id].append({
-            'interest_tag': interest_tag,
+        if uid not in interest_log:
+            interest_log[uid] = []
+        interest_log[uid].append({
+            'interest_tag': tags,
             'timestamp': get_timestamp()
         })
         
-        # 2. 获取短期记忆 
         short_term_memories = []
-        memory_system = None
+        try:
+            short_term_memories = mem_sys.short_term_memory.get_all()
+            print(f"User {uid} short-term memories retrieved: {len(short_term_memories)}")
+        except Exception as e:
+            print(f"Error retrieving memories: {e}")
         
-        session_id = session.get('memory_session_id')
-        if session_id and session_id in memory_systems:
-            memory_system = memory_systems[session_id]
-            try:
-                short_term_memories = memory_system.short_term_memory.get_all()
-                print(f"User {user_id} short-term memories retrieved: {len(short_term_memories)}")
-            except Exception as e:
-                print(f"Error retrieving memories: {e}")
+        context_str = ""
+        if short_term_memories:
+            for mem in short_term_memories[-5:]: 
+                u_in = mem.get('user_input', '')
+                a_res = mem.get('agent_response', '')
+                context_str += f"User: {u_in}\nAI: {a_res}\n"
         
-        #  构建 Prompt 
-        if memory_system:
-            context_str = ""
-            if short_term_memories:
-                for mem in short_term_memories:
-                    # 假设 memory 结构中有 user_input 和 agent_response
-                    u_in = mem.get('user_input', '')
-                    a_res = mem.get('agent_response', '')
-                    context_str += f"User: {u_in}\nAI: {a_res}\n"
-            prompt = (
+        # 5. 构建 Prompt (修正：使用参数 tags 和 current_input)
+        prompt = (
             f"你是一个广告匹配引擎的语义分析器。\n"
-            f"用户当前的显式兴趣标签是：{','.join(interest_tag)}。\n"
-            f"用户最近的对话上下文是：\n{context_str}\n\n"
+            f"用户当前的显式兴趣标签是：{','.join(tags)}。\n"
+            f"用户最近的对话上下文是：\n{context_str}\n"
+            f"用户本轮输入：\n{current_input}\n\n"
             f"任务：分析用户的潜在需求，提取 2-3 个宏观主题(topics) 和 3-5 个具体关键词(keywords)。\n"
-            f"主题(topics)请尽量使用中文通用词（如运动, 科技, 食品,健康）。\n"
+            f"主题(topics)请尽量使用中文通用词（如运动, 科技, 食品, 健康）。\n"
             f"关键词(keywords)请使用中文，对应具体商品品类或属性。\n\n"
             f"**必须且只能**返回合法的 JSON 格式，不要包含任何其他文字。格式示例：\n"
             f'{{"topics": ["运动", "健康"], "keywords": ["跑鞋", "护膝", "减肥"]}}'
+        )
+
+        try:
+            recommendation = mem_sys.client.chat_completion(
+                model=mem_sys.llm_model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.3,
+                stream=False
             )
-
-            # 根据返回的 Key 匹配广告
+            
+            extracted_data = None
             try:
-                recommendation = memory_system.get_response(prompt)
-                try:
-                    extracted_data = json.loads(recommendation)
-                except:
-                    extracted_data = re.sub(r"```json\s*|\s*```", "", recommendation, flags=re.IGNORECASE).strip()
-                    extracted_data =  json.loads(extracted_data)
+                extracted_data = json.loads(recommendation)
+            except:
+                import re
+                extracted_data = re.sub(r"```json\s*|\s*```", "", recommendation, flags=re.IGNORECASE).strip()
+                extracted_data = json.loads(extracted_data)
 
-                if extracted_data:
-                    rec_topics = set(t.lower() for t in extracted_data.get('topics', []) if t.lower() not in forbidden_keywords)
-                    rec_keywords = set(k.lower() for k in extracted_data.get('keywords', []) if k.lower() not in forbidden_keywords)
-                    print(f"AI Extracted: Topics={rec_topics}, Keywords={rec_keywords}")
-                else:
-                    print("Failed to parse JSON")
+            if extracted_data:
+                rec_topics = set(t.lower() for t in extracted_data.get('topics', []) if t.lower() not in forbidden_keywords)
+                rec_keywords = set(k.lower() for k in extracted_data.get('keywords', []) if k.lower() not in forbidden_keywords)
+                print(f"AI Extracted: Topics={rec_topics}, Keywords={rec_keywords}")
+            else:
+                print("Failed to parse JSON")
 
-            except Exception as e:
-                print(f"Failed to parse advertisement analysis response: {e}")
-            for ad in ads_data:
-                # 如果广告的 topics 或 keywords 中有任意一个与提取的匹配，则推荐
-                if (set(t.lower() for t in ad['topics']) & set(rec_topics)) or (set(k.lower() for k in ad['keywords']) & set(rec_keywords)):
-                    recommended_ads.append(ad)
-        else:
-            print("No memory system found, using simple matching.")
+        except Exception as e:
+            print(f"Failed to parse advertisement analysis response: {e}")
 
+        for ad in ads_data:
+            ad_topics = set(t.lower() for t in ad.get('topics', []))
+            ad_keywords = set(k.lower() for k in ad.get('keywords', []))
+            
+            if (ad_topics & rec_topics) or (ad_keywords & rec_keywords):
+                recommended_ads.append(ad)
 
         return recommended_ads
-    
-    ad_res = advertise(user_id,interest_tag)
 
-    
-    try:
-        response = memory_system.get_response(user_input)
-        return jsonify({
-            'response': response,
-            'timestamp': get_timestamp(),
-            'advertise': ad_res
-        })
-    except Exception as e:
-        import traceback
-        error_trace = traceback.format_exc()
-        print(f"Chat error: {error_trace}")
-        return jsonify({
-            'error': str(e), 
-            'traceback': error_trace
-        }), 500
+    # 定义流式生成器 
+    def generate():
+        # 立即在后台启动广告分析 (不阻塞聊天)
+        ad_future = executor.submit(
+            advertise, memory_system,user_id, interest_tag,user_input
+        )
+
+        try:
+            # 优先处理聊天流 (用户立刻看到字)
+            for chunk in memory_system.get_response_stream(user_input):
+                # 包装成 SSE 格式: data: {...}\n\n
+                yield f"data: {json.dumps({'response': chunk}, ensure_ascii=False)}\n\n"
+            
+            # 聊天结束，获取广告结果
+            try:
+                ad_res = ad_future.result(timeout=5) 
+                if ad_res:
+                    yield f"data: {json.dumps({'advertise': ad_res}, ensure_ascii=False)}\n\n"
+            except Exception as e:
+                print(f"Ad calculation timed out or failed: {e}")
+            yield f"data: {json.dumps({'done': True})}\n\n"
+
+        except Exception as e:
+            print(f"Stream error: {e}")
+            yield f"data: {json.dumps({'error': str(e)})}\n\n"
+
+    return Response(stream_with_context(generate()), mimetype='text/event-stream')
 
 @app.route('/import_from_cache', methods=['POST'])
 def import_from_cache_endpoint():
