@@ -36,6 +36,10 @@ memory_systems = {}
 with open('./memdemo/ad_data/ad_demo_format.json', 'r', encoding='utf-8') as f: 
     ads_data = json.load(f)
     ads_data = ads_data["advertisements"]
+with open('./memdemo/ad_data/forbidden_keywords.json', 'r', encoding='utf-8') as f: 
+    forbidden_keywords = json.load(f)
+    forbidden_keywords = forbidden_keywords["forbidden_keywords"]
+
 interest_log = {}
 
 
@@ -848,8 +852,8 @@ def advertise():
                 extracted_data =  json.loads(extracted_data)
 
             if extracted_data:
-                rec_topics = set(t.lower() for t in extracted_data.get('topics', []))
-                rec_keywords = set(k.lower() for k in extracted_data.get('keywords', []))
+                rec_topics = set(t.lower() for t in extracted_data.get('topics', []) if t.lower() not in forbidden_keywords)
+                rec_keywords = set(k.lower() for k in extracted_data.get('keywords', []) if k.lower() not in forbidden_keywords)
                 print(f"AI Extracted: Topics={rec_topics}, Keywords={rec_keywords}")
             else:
                 print("Failed to parse JSON")
