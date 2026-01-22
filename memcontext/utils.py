@@ -160,10 +160,10 @@ def get_embedding(text, model_name="all-MiniLM-L6-v2", use_cache=True, **kwargs)
             return _embedding_cache[cache_key]
     
     # 检查是否是豆包 embedding 模型（通过模型名称判断）
-    is_doubao_embedding = 'doubao' in model_name.lower() and 'embedding' in model_name.lower()
+    is_doubao_bge_embedding = ('doubao'  in model_name.lower() and 'embedding' in model_name.lower())  or 'bge' in model_name.lower()
     
-    if is_doubao_embedding:
-        # 使用豆包 embedding API
+    if is_doubao_bge_embedding:
+        # 使用豆包或者siliconflow的 embedding API
         embedding_api_key = os.environ.get('EMBEDDING_API_KEY') or os.environ.get('LLM_API_KEY', '')
         embedding_base_url = os.environ.get('EMBEDDING_BASE_URL') or os.environ.get('LLM_BASE_URL', 'https://ark.cn-beijing.volces.com/api/v3')
         

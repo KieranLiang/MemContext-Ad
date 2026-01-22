@@ -24,7 +24,7 @@ def load_env_file(env_path: Optional[Path] = None) -> None:
     如果 env_path 为 None，会在当前文件目录和父目录中查找 .env 文件
     """
     if env_path is None:
-        current_file_dir = Path(__file__).parent
+        current_file_dir = Path.cwd()
         env_path = current_file_dir / ".env"
         if not env_path.exists():
             parent_dir = current_file_dir.parent.parent
