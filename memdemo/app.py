@@ -180,11 +180,45 @@ def init_memory():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+
+def get_user_tags(memory_system):
+    """获取用户标签
+    return 字典 {'interests':["兴趣1","兴趣2"],
+    "personality_traits":["性格1","性格2"]}"""
+    user_profile = memory_system.user_long_term_memory.get_raw_user_profile(memory_system.user_id)
+    if not user_profile or user_profile.lower() in ["null", "none", "no profile data yet"]:
+        return {'interests':[], "personality_traits":[]}
+    try:
+        personality_traits = parse_personality_traits(user_profile)
+        interests_tags=personality_traits.get("Content Platform Interest Tags", [])
+        user_interests = []
+        for interest in interests_tags:
+            level = interest.get("level", "").lower()
+            dimension = interest.get("dimension", "")
+            if level in ["high", "medium"] and dimension:
+                interest = dimension.replace("Interest", "").replace("Concern", "").replace("Activity", "").strip()
+                if interest:
+                    user_interests.append(interest)
+        psychological_traits = personality_traits.get("Psychological Model", [])
+        user_personality_traits = []
+        for trait in psychological_traits:
+            level = trait.get("level", "").lower()
+            dimension = trait.get("dimension", "")
+            if level in ["high", "medium"] and dimension:
+                trait = dimension.replace("Need for", "").replace("Need", "").strip()
+
+                if trait:
+                    user_personality_traits.append(trait)
+        return {'interests':user_interests, "personality_traits":user_personality_traits}
+    except Exception as e:
+        print(f"DEBUG [Ad]: Error getting user tags: {e}", flush=True)
+        return {'interests':[], "personality_traits":[]}
+
 @app.route('/chat', methods=['POST'])
 def chat():
     data = request.json
     user_input = data.get('message', '')
-    interest_tag = data.get('interest_tag', [])
+    
     user_id = data.get('user_id', '').strip()
     
     session_id = session.get('memory_session_id')
@@ -194,11 +228,13 @@ def chat():
     memory_system = memory_systems[session_id]
 
     def advertise(mem_sys, uid, tags, current_input):
+        print(f"DEBUG [Ad]: advertise task started for user={uid}", flush=True)
         recommended_ads = [] 
         rec_topics = set()
         rec_keywords = set()
 
         if not tags or not uid:
+            print(f"DEBUG [Ad]: Missing tags or uid. Tags={tags}, UID={uid}", flush=True)
             return []
         
         if uid not in interest_log:
@@ -211,9 +247,9 @@ def chat():
         short_term_memories = []
         try:
             short_term_memories = mem_sys.short_term_memory.get_all()
-            print(f"User {uid} short-term memories retrieved: {len(short_term_memories)}")
+            print(f"DEBUG [Ad]: User {uid} short-term memories retrieved: {len(short_term_memories)}", flush=True)
         except Exception as e:
-            print(f"Error retrieving memories: {e}")
+            print(f"DEBUG [Ad]: Error retrieving memories: {e}", flush=True)
         
         context_str = ""
         if short_term_memories:
@@ -236,12 +272,14 @@ def chat():
         )
 
         try:
+            print(f"DEBUG [Ad]: Calling LLM for ad analysis...", flush=True)
             recommendation = mem_sys.client.chat_completion(
                 model=mem_sys.llm_model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.3,
                 stream=False
             )
+            print(f"DEBUG [Ad]: LLM Response: {recommendation[:100]}...", flush=True)
             
             extracted_data = None
             try:
@@ -254,12 +292,12 @@ def chat():
             if extracted_data:
                 rec_topics = set(t.lower() for t in extracted_data.get('topics', []) if t.lower() not in forbidden_keywords)
                 rec_keywords = set(k.lower() for k in extracted_data.get('keywords', []) if k.lower() not in forbidden_keywords)
-                print(f"AI Extracted: Topics={rec_topics}, Keywords={rec_keywords}")
+                print(f"DEBUG [Ad]: AI Extracted: Topics={rec_topics}, Keywords={rec_keywords}", flush=True)
             else:
-                print("Failed to parse JSON")
+                print("DEBUG [Ad]: Failed to parse JSON from LLM response", flush=True)
 
         except Exception as e:
-            print(f"Failed to parse advertisement analysis response: {e}")
+            print(f"DEBUG [Ad]: Failed to parse advertisement analysis response: {e}", flush=True)
 
         for ad in ads_data:
             ad_topics = set(t.lower() for t in ad.get('topics', []))
@@ -268,11 +306,14 @@ def chat():
             if (ad_topics & rec_topics) or (ad_keywords & rec_keywords):
                 recommended_ads.append(ad)
 
+        print(f"DEBUG [Ad]: Finished. Found {len(recommended_ads)} ads.", flush=True)
         return recommended_ads
 
     # 定义流式生成器 
     def generate():
         # 立即在后台启动广告分析 (不阻塞聊天)
+        interest_tag = get_user_tags(memory_system)
+        print("interest_tag:", interest_tag, flush=True)
         ad_future = executor.submit(
             advertise, memory_system,user_id, interest_tag,user_input
         )
