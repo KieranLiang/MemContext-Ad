@@ -68,16 +68,16 @@
 
 .chat-content-area.has-messages .chat-messages-container {
   min-height: min-content;
-  padding-top: 0;
-  padding-bottom: 180px;
-  justify-content: flex-end;
+  padding-top: 24px;
+  padding-bottom: 80vh; /* 使用 80vh 以确保最新消息能滚动到顶部 */
+  justify-content: flex-start;
   max-width: 768px;
   width: 100%;
   padding-left: 24px;
   padding-right: 24px;
-  gap: 0;
+  gap: 24px;
   margin: 0 auto;
-  flex-direction: column-reverse;
+  flex-direction: column;
   flex-shrink: 0;
 }
 
