@@ -1,0 +1,5 @@
+/* App 全局样式 */
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+}

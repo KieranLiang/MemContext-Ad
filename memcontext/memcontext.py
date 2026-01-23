@@ -1,5 +1,6 @@
 import os
 import json
+import threading
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Union
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -333,8 +334,16 @@ class Memcontext:
 
     def add_memory(self, user_input: str, agent_response: str, timestamp: str = None, meta_data: dict = None):
         """ 
-        Adds a new QA pair (memory) to the system.
-        meta_data is not used in the current refactoring but kept for future use.
+        Legacy synchronous method (kept for compatibility).
+        Now calls sync part then async part.
+        """
+        self.add_short_term_memory_sync(user_input, agent_response, timestamp, meta_data)
+        self.trigger_long_term_analysis_async()
+
+    def add_short_term_memory_sync(self, user_input: str, agent_response: str, timestamp: str = None, meta_data: dict = None):
+        """
+        Lightweight sync operation: write to short-term memory (RAM/JSON).
+        This ensures the next turn of conversation can immediately see this history.
         """
         if not timestamp:
             timestamp = get_timestamp()
@@ -346,10 +355,15 @@ class Memcontext:
             "meta_data": meta_data or {}
         }
         self.short_term_memory.add_qa_pair(qa_pair)
-        print(f"Memorycontext: Added QA to short-term. User: {user_input[:30]}...")
+        print(f"Memorycontext: Added QA to short-term (Sync). User: {user_input[:30]}...")
 
+    def trigger_long_term_analysis_async(self):
+        """
+        Heavyweight operation: mid-term migration, profile analysis, knowledge extraction.
+        Should typically be run in a background thread.
+        """
         if self.short_term_memory.is_full():
-            print("Memorycontext: Short-term memory full. Processing to mid-term.")
+            print("Memorycontext: Short-term memory full. Processing to mid-term (Async).")
             self.updater.process_short_term_to_mid_term()
         
         # After any memory addition that might impact mid-term, check for profile updates
@@ -1256,11 +1270,24 @@ class Memcontext:
             
             # 只有当流走完，我们才拥有了完整的回复，这时候存入记忆
             if full_response_content:
-                self.add_memory(
-                    user_input=query, 
-                    agent_response=full_response_content, 
-                    timestamp=get_timestamp()
-                )
+                # 1. 同步：立即写入 Short-Term Memory，确保下一轮对话可见
+                try:
+                    self.add_short_term_memory_sync(
+                        user_input=query, 
+                        agent_response=full_response_content, 
+                        timestamp=get_timestamp()
+                    )
+                except Exception as e:
+                    print(f"Error in sync add_short_term_memory: {e}")
+
+                # 2. 异步：启动后台线程处理长期记忆分析（耗时操作）
+                def async_long_term_process():
+                    try:
+                        self.trigger_long_term_analysis_async()
+                    except Exception as e:
+                        print(f"Error in async long_term_process: {e}")
+                
+                threading.Thread(target=async_long_term_process).start()
                 
         except Exception as e:
             print(f"Streaming error: {e}")

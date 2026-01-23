@@ -31,6 +31,15 @@ from memcontext.utils import get_timestamp
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
 
+# CORS 配置 - 允许跨域请求
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
+    return response
+
 # Global memcontext instance (in production, you'd use proper session management)
 memory_systems = {}
 
@@ -86,9 +95,20 @@ interest_log = {}
 # 启动时加载邀请码
 # VALID_INVITE_CODES = load_invite_codes()
 
+# 处理 OPTIONS 预检请求
+@app.before_request
+def handle_preflight():
+    if request.method == "OPTIONS":
+        response = jsonify({})
+        response.headers.add("Access-Control-Allow-Origin", "*")
+        response.headers.add('Access-Control-Allow-Headers', "Content-Type,Authorization")
+        response.headers.add('Access-Control-Allow-Methods', "GET,PUT,POST,DELETE,OPTIONS")
+        response.headers.add('Access-Control-Allow-Credentials', 'true')
+        return response
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return "MemContext API Server is running. Please access the frontend via the Vite development server or the built static files."
 
 @app.route('/init_memory', methods=['POST'])
 def init_memory():
@@ -262,6 +282,9 @@ def chat():
             for chunk in memory_system.get_response_stream(user_input):
                 # 包装成 SSE 格式: data: {...}\n\n
                 yield f"data: {json.dumps({'response': chunk}, ensure_ascii=False)}\n\n"
+            
+            # 发送文字结束信号，让前端可以提前解锁输入框
+            yield f"data: {json.dumps({'text_done': True})}\n\n"
             
             # 聊天结束，获取广告结果
             try:

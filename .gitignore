@@ -226,3 +226,18 @@ memcontext-coze/runtime/job_store/
 
 # Memov
 .mem/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor/IDE files
+.cursor/
+.shared/
+.vscode/
+.idea/

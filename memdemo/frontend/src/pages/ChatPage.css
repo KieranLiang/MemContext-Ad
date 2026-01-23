@@ -1,0 +1,241 @@
+/* Chat Page Styles - Gemini Design */
+.chat-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.chat-content-area {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  position: relative;
+  padding-top: 64px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chat-content-area.has-messages {
+  justify-content: flex-start;
+  background: #ffffff;
+}
+
+.chat-content-area.initial-state {
+  padding-top: 64px;
+}
+
+
+.chat-page-wrapper {
+  background: #ffffff;
+}
+
+.chat-content-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-content-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-content-area::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.chat-content-area::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.chat-messages-container {
+  width: 100%;
+  max-width: 768px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+}
+
+.chat-content-area.has-messages .chat-messages-container {
+  min-height: min-content;
+  padding-top: 0;
+  padding-bottom: 180px;
+  justify-content: flex-end;
+  max-width: 768px;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  gap: 0;
+  margin: 0 auto;
+  flex-direction: column-reverse;
+  flex-shrink: 0;
+}
+
+.message-with-ads {
+  width: 100%;
+}
+
+/* 初始状态容器 - 垂直居中整个欢迎区域和输入框 */
+.chat-initial-container {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 24px 16px;
+  position: absolute;
+  top: calc(50% - 40px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chat-content-area.has-messages:not(.initial-state) .chat-initial-container {
+  animation: slideDownContainer 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideDownContainer {
+  from {
+    top: calc(50% - 40px);
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    top: calc(100% + 100px);
+    transform: translate(-50%, 0);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* 输入框容器 - 初始状态时居中，有消息后固定在底部 */
+.chat-input-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  background: transparent;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* 初始状态：输入框在中间（作为初始容器的一部分） */
+.chat-input-container.centered {
+  position: relative;
+  width: 100%;
+  padding: 0;
+}
+
+/* 有消息后：输入框固定在底部 */
+.chat-input-container.fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-top: none;
+  padding: 24px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  width: 100%;
+}
+
+.chat-input-container.fixed::before {
+  content: '';
+  position: absolute;
+  top: -36px;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.5) 50%, #ffffff 100%);
+  pointer-events: none;
+  z-index: 99;
+}
+
+.chat-input-container.fixed .chat-input-area {
+  max-width: 768px;
+  width: 100%;
+}
+
+.error-toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(239, 68, 68, 0.95);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-content-area {
+    padding-top: 56px;
+  }
+
+  .chat-content-area.has-messages {
+    padding-top: 56px;
+  }
+
+  .chat-initial-container {
+    top: calc(50% - 40px);
+  }
+
+  .chat-content-area.has-messages:not(.initial-state) .chat-initial-container {
+    animation: slideDownContainerMobile 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes slideDownContainerMobile {
+    from {
+      top: calc(50% - 40px);
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+    to {
+      top: calc(100% + 100px);
+      transform: translate(-50%, 0);
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .chat-messages-container {
+    padding: 16px 12px;
+  }
+
+  .chat-input-container {
+    padding: 16px;
+  }
+}
