@@ -241,3 +241,6 @@ Thumbs.db
 .shared/
 .vscode/
 .idea/
+
+# Node.js
+package-lock.json
