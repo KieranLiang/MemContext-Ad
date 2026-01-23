@@ -36,12 +36,13 @@ memory_systems = {}
 
 
 # 商品数据(用于广告推荐)
-with open('./memdemo/ad_data/ad_demo_format.json', 'r', encoding='utf-8') as f: 
+ad_data_dir = os.path.join(os.path.dirname(__file__), 'ad_data')
+with open(os.path.join(ad_data_dir, 'ad_demo_format.json'), 'r', encoding='utf-8') as f: 
     ads_data = json.load(f)
     ads_data = ads_data["advertisements"]
-with open('./memdemo/ad_data/forbidden_keywords.json', 'r', encoding='utf-8') as f: 
+with open(os.path.join(ad_data_dir, 'forbidden_keywords.json'), 'r', encoding='utf-8') as f: 
     forbidden_keywords = json.load(f)
-    forbidden_keywords = forbidden_keywords["forbidden_keywords"]
+    forbidden_keywords = forbidden_keywords.get("forbidden_words", forbidden_keywords.get("forbidden_keywords", []))
 
 interest_log = {}
 
