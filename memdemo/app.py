@@ -17,6 +17,9 @@ from dotenv import load_dotenv
 
 # 加载 .env 文件中的环境变量
 # load_dotenv 会自动从当前目录和父目录向上查找 .env 文件
+# 优先加载当前目录下的 .env
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
+# 如果当前目录没有，再尝试加载父目录的 .env (兼容旧配置)
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 # Add parent directory to path to import memcontext
@@ -52,6 +55,10 @@ with open(os.path.join(ad_data_dir, 'ad_demo_format.json'), 'r', encoding='utf-8
 with open(os.path.join(ad_data_dir, 'forbidden_keywords.json'), 'r', encoding='utf-8') as f: 
     forbidden_keywords = json.load(f)
     forbidden_keywords = forbidden_keywords.get("forbidden_words", forbidden_keywords.get("forbidden_keywords", []))
+
+with open(os.path.join(ad_data_dir, 'all_tags.json'), 'r', encoding='utf-8') as f:
+    all_tags_data = json.load(f)
+    available_tags = all_tags_data.get("tags", [])
 
 interest_log = {}
 
@@ -250,61 +257,69 @@ def chat():
             print(f"DEBUG [Ad]: User {uid} short-term memories retrieved: {len(short_term_memories)}", flush=True)
         except Exception as e:
             print(f"DEBUG [Ad]: Error retrieving memories: {e}", flush=True)
+
+        # 5. 构建 Prompt (改为基于 tag 列表的选择)
+        tags_library_str = json.dumps(available_tags, ensure_ascii=False)
+        user_profile_str = json.dumps(tags, ensure_ascii=False)
+        personality_traits = tags.get('personality_traits', [])
         
-        context_str = ""
-        if short_term_memories:
-            for mem in short_term_memories[-5:]: 
-                u_in = mem.get('user_input', '')
-                a_res = mem.get('agent_response', '')
-                context_str += f"User: {u_in}\nAI: {a_res}\n"
-        
-        # 5. 构建 Prompt (修正：使用参数 tags 和 current_input)
         prompt = (
-            f"你是一个广告匹配引擎的语义分析器。\n"
-            f"用户当前的显式兴趣标签是：{','.join(tags)}。\n"
-            f"用户最近的对话上下文是：\n{context_str}\n"
-            f"用户本轮输入：\n{current_input}\n\n"
-            f"任务：分析用户的潜在需求，提取 2-3 个宏观主题(topics) 和 3-5 个具体关键词(keywords)。\n"
-            f"主题(topics)请尽量使用中文通用词（如运动, 科技, 食品, 健康）。\n"
-            f"关键词(keywords)请使用中文，对应具体商品品类或属性。\n\n"
-            f"**必须且只能**返回合法的 JSON 格式，不要包含任何其他文字。格式示例：\n"
-            f'{{"topics": ["运动", "健康"], "keywords": ["跑鞋", "护膝", "减肥"]}}'
+            f"你是一个专业的广告匹配引擎的标签选择器。\n"
+            f"【候选标签库】：\n{tags_library_str}\n\n"
+            f"【用户画像】：\n{user_profile_str}\n\n"
+            f"【用户当前输入】：\n{current_input}\n\n"
+            f"【用户兴趣标签】：\n{tags}\n\n"
+            f"任务：根据用户的输入、对话语境以及用户画像，从【候选标签库】中挑选出最相关的 3-8 个标签用于推荐广告。\n"
+            f"\n"
+            f"注意：如果用户输入的文本有关健康、心理健康、政治等敏感内容，请不要输出任何标签，并返回一个空列表[]。"
+            f"【用户性格特征】：\n{personality_traits}\n\n"
+            f"要求：\n"
+            f"1. **必须且只能**从【候选标签库】中选择，严禁创造新标签。\n"
+            f"2. 返回格式必须是纯 JSON 数组，例如：[\"标签1\", \"标签2\"]。\n"
+            f"3. 如果没有相关标签，返回空数组 []。\n"
+            
         )
 
         try:
-            print(f"DEBUG [Ad]: Calling LLM for ad analysis...", flush=True)
+            print(f"DEBUG [Ad]: Calling LLM for tag selection...", flush=True)
             recommendation = mem_sys.client.chat_completion(
                 model=mem_sys.llm_model,
                 messages=[{"role": "user", "content": prompt}],
-                temperature=0.3,
+                temperature=0.1,
                 stream=False
             )
             print(f"DEBUG [Ad]: LLM Response: {recommendation[:100]}...", flush=True)
             
-            extracted_data = None
+            extracted_tags = []
             try:
-                extracted_data = json.loads(recommendation)
-            except:
-                import re
-                extracted_data = re.sub(r"```json\s*|\s*```", "", recommendation, flags=re.IGNORECASE).strip()
-                extracted_data = json.loads(extracted_data)
+                # Cleaning markdown code blocks if present
+                clean_json = recommendation
+                if "```" in clean_json:
+                    import re
+                    clean_json = re.sub(r"```json\s*|\s*```", "", clean_json, flags=re.IGNORECASE).strip()
+                
+                parsed_data = json.loads(clean_json)
+                if isinstance(parsed_data, list):
+                    extracted_tags = parsed_data
+                elif isinstance(parsed_data, dict) and 'tags' in parsed_data:
+                    extracted_tags = parsed_data['tags']
+                
+            except Exception as e:
+                print(f"DEBUG [Ad]: JSON parsing failed: {e}", flush=True)
 
-            if extracted_data:
-                rec_topics = set(t.lower() for t in extracted_data.get('topics', []) if t.lower() not in forbidden_keywords)
-                rec_keywords = set(k.lower() for k in extracted_data.get('keywords', []) if k.lower() not in forbidden_keywords)
-                print(f"DEBUG [Ad]: AI Extracted: Topics={rec_topics}, Keywords={rec_keywords}", flush=True)
-            else:
-                print("DEBUG [Ad]: Failed to parse JSON from LLM response", flush=True)
+            # Filter valid tags
+            rec_tags = set(t for t in extracted_tags if t in available_tags)
+            print(f"DEBUG [Ad]: AI Selected Valid Tags: {rec_tags}", flush=True)
+
+            # Match Ads
+            for ad in ads_data:
+                ad_tags = set(ad.get('tags', []))
+                # Match if any tag overlaps
+                if ad_tags & rec_tags:
+                    recommended_ads.append(ad)
 
         except Exception as e:
-            print(f"DEBUG [Ad]: Failed to parse advertisement analysis response: {e}", flush=True)
-
-        for ad in ads_data:
-            ad_topics = set(t.lower() for t in ad.get('topics', []))
-            ad_keywords = set(k.lower() for k in ad.get('keywords', []))
-            
-            if (ad_topics & rec_topics) or (ad_keywords & rec_keywords):
-                recommended_ads.append(ad)
+            print(f"DEBUG [Ad]: Advertisement analysis failed: {e}", flush=True)
 
         print(f"DEBUG [Ad]: Finished. Found {len(recommended_ads)} ads.", flush=True)
         return recommended_ads
