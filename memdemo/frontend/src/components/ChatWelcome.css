@@ -21,18 +21,12 @@
   width: 40px;
   height: 40px;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #4285F4 0%, #34A853 25%, #FBBC04 50%, #EA4335 75%, #4285F4 100%);
-  background-size: 200% 200%;
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(45deg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .chat-welcome-logo-inner {
-  transform: rotate(-45deg);
   width: 28px;
   height: 28px;
   display: flex;
@@ -40,11 +34,6 @@
   justify-content: center;
 }
 
-.chat-welcome-logo-inner svg {
-  width: 20px;
-  height: 20px;
-  color: white;
-}
 
 .chat-welcome-text {
   flex: 1;

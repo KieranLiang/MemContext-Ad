@@ -82,6 +82,12 @@ export default function ChatPage({ userId, sessionId, onLogout }: ChatPageProps)
   
   // 仅当是第一条消息生成过程中，为了防止过长内容看不见，可以微调，但通常 block: 'start' 已经够了。
 
+  const handleNewChat = () => {
+    setMessages([]);
+    setCurrentResponse('');
+    setIsFirstMessage(true);
+  };
+
   const handleSend = async (text: string) => {
     if (!text.trim() || isStreaming) return;
 
@@ -146,7 +152,7 @@ export default function ChatPage({ userId, sessionId, onLogout }: ChatPageProps)
   return (
     <div className="chat-page-wrapper">
       <ChatHeader userId={userId} />
-      <FloatingNav onLogout={onLogout} />
+      <FloatingNav onLogout={onLogout} onNewChat={handleNewChat} hasMessages={hasMessages} />
       <div id="chat-content-area" className={`chat-content-area ${hasMessages ? 'has-messages' : ''} ${isFirstMessage ? 'initial-state' : ''}`}>
         {!hasMessages ? (
           <div className="chat-initial-container">

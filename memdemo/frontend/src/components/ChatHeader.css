@@ -21,22 +21,11 @@
 .chat-header-logo {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #4285F4 0%, #34A853 25%, #FBBC04 50%, #EA4335 75%, #4285F4 100%);
-  background-size: 200% 200%;
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(45deg);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.chat-header-logo svg {
-  width: 24px;
-  height: 24px;
-  color: white;
-  transform: rotate(-45deg);
-}
 
 .chat-header-title {
   font-family: 'Poppins', sans-serif;

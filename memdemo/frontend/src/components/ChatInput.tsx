@@ -8,11 +8,9 @@ interface ChatInputProps {
 }
 
 const SUGGESTIONS = [
-  '制作图片',
-  '创作视频',
-  '随便写点什么',
-  '帮我学习',
-  '给我的一天注入活力',
+  '最近有哪些电影上线？',
+  '明天午餐吃什么呢？',
+  '朋友过生日送什么礼物？',
 ];
 
 export default function ChatInput({ onSend, disabled, showSuggestions: externalShowSuggestions }: ChatInputProps) {
@@ -63,7 +61,7 @@ export default function ChatInput({ onSend, disabled, showSuggestions: externalS
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="问问 MemContext"
+            placeholder="今天想聊点什么？"
             rows={2}
             autoComplete="off"
           />

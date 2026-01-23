@@ -3,9 +3,11 @@ import './FloatingNav.css';
 
 interface FloatingNavProps {
   onLogout: () => void;
+  onNewChat?: () => void;
+  hasMessages?: boolean;
 }
 
-export default function FloatingNav({ onLogout }: FloatingNavProps) {
+export default function FloatingNav({ onLogout, onNewChat, hasMessages }: FloatingNavProps) {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -13,6 +15,18 @@ export default function FloatingNav({ onLogout }: FloatingNavProps) {
 
   return (
     <div className="floating-nav-capsule">
+      {hasMessages && onNewChat && (
+        <button
+          className="nav-capsule-item"
+          onClick={onNewChat}
+          data-tooltip="新建聊天"
+          aria-label="New Chat"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 5v14M5 12h14"></path>
+          </svg>
+        </button>
+      )}
       <button
         className={`nav-capsule-item ${isActive('/chat') ? 'active' : ''}`}
         onClick={() => navigate('/chat')}

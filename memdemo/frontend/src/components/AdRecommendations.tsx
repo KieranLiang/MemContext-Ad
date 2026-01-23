@@ -31,7 +31,7 @@ export default function AdRecommendations({ ads }: AdRecommendationsProps) {
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
           </div>
-          <span className="ad-header-brand">MemContext</span>
+          <span className="ad-header-brand">Demo：基于Memory的个性化广告推荐</span>
           <span className="ad-header-sponsored">Sponsored</span>
         </div>
         <button className="ad-header-menu" aria-label="More options">
