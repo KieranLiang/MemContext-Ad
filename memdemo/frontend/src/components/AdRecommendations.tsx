@@ -55,7 +55,6 @@ export default function AdRecommendations({ ads }: AdRecommendationsProps) {
                     <span className="ad-card-separator">•</span>
                     <span className="ad-card-price">¥{Math.floor(Math.random() * 200 + 50)}</span>
                   </div>
-                  <div className="ad-card-delivery">25-35 分钟</div>
                 </div>
                 <div className="ad-card-image">
                   {ad.image_url ? (
