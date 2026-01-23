@@ -27,8 +27,14 @@ export default function MemoryPage({ userId, sessionId, onLogout }: MemoryPagePr
     try {
       const data = await getMemoryState();
       setMemoryState(data);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Failed to load memory state:', error);
+      // 如果后端返回 Memory system not initialized (通常是400或401)，说明会话失效
+      if (error.response && error.response.status === 400 && 
+          error.response.data?.error === 'Memory system not initialized') {
+        // 调用登出，返回登录页重新初始化
+        onLogout();
+      }
     }
   };
 
