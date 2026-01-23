@@ -995,5 +995,22 @@ def import_conversations():
 
 
 
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    """健康检查端点，用于云平台部署"""
+    return jsonify({
+        'status': 'healthy',
+        'timestamp': datetime.now().isoformat(),
+        'service': 'memcontext-ad'
+    }), 200
+
+# 生产环境：服务前端静态文件
+if os.getenv('FLASK_ENV') == 'production':
+    try:
+        from memdemo.static_serve import configure_static_files
+        configure_static_files(app)
+    except ImportError:
+        print("⚠️  Static file serving not configured")
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5019) 

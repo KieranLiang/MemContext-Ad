@@ -1,0 +1,20 @@
+# Zeabur 配置文件
+name: memcontext-ad
+
+services:
+  - name: memcontext-backend
+    type: dockerfile
+    dockerfile: Dockerfile
+    ports:
+      - 5019
+    env:
+      - OPENAI_API_KEY
+      - OPENAI_API_BASE
+      - LLM_MODEL
+      - FLASK_ENV=production
+    volumes:
+      - /app/memdemo/data
+      - /app/files
+    resources:
+      memory: 2048  # 2GB 内存（ML 模型需要）
+
