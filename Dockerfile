@@ -23,8 +23,8 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 # 复制项目文件
 COPY . .
 
-# 安装 Node.js 用于构建前端
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+# 安装 Node.js 22 用于构建前端
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
     apt-get install -y nodejs && \
     rm -rf /var/lib/apt/lists/*
 
