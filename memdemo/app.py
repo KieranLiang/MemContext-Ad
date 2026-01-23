@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, request, jsonify, session,Response, stream_with_context
 from concurrent.futures import ThreadPoolExecutor
-executor = ThreadPoolExecutor(max_workers=5)
+# 增加线程池大小以支持并发的聊天和广告计算
+executor = ThreadPoolExecutor(max_workers=10)
 
 import sys
 import os
@@ -235,7 +236,9 @@ def chat():
     memory_system = memory_systems[session_id]
 
     def advertise(mem_sys, uid, tags, current_input):
-        print(f"DEBUG [Ad]: advertise task started for user={uid}", flush=True)
+        import time
+        start_time = time.time()
+        print(f"DEBUG [Ad]: advertise task started for user={uid} at {time.strftime('%H:%M:%S')}", flush=True)
         recommended_ads = [] 
         rec_topics = set()
         rec_keywords = set()
@@ -282,33 +285,56 @@ def chat():
 
         try:
             print(f"DEBUG [Ad]: Calling LLM for tag selection...", flush=True)
-            recommendation = mem_sys.client.chat_completion(
+            # 使用 Future 来控制 LLM 调用超时,避免卡死
+            from concurrent.futures import TimeoutError as FutureTimeoutError
+            llm_future = executor.submit(
+                mem_sys.client.chat_completion,
                 model=mem_sys.llm_model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.1,
                 stream=False
             )
-            print(f"DEBUG [Ad]: LLM Response: {recommendation[:100]}...", flush=True)
+            try:
+                recommendation = llm_future.result(timeout=10)  # LLM 调用最多等待 10 秒
+                print(f"DEBUG [Ad]: LLM Response: {recommendation[:100] if recommendation else '(empty)'}...", flush=True)
+            except FutureTimeoutError:
+                print(f"DEBUG [Ad]: LLM call timed out after 10 seconds", flush=True)
+                recommendation = ""
             
             extracted_tags = []
-            try:
-                # Cleaning markdown code blocks if present
-                clean_json = recommendation
-                if "```" in clean_json:
-                    import re
-                    clean_json = re.sub(r"```json\s*|\s*```", "", clean_json, flags=re.IGNORECASE).strip()
-                
-                parsed_data = json.loads(clean_json)
-                if isinstance(parsed_data, list):
-                    extracted_tags = parsed_data
-                elif isinstance(parsed_data, dict) and 'tags' in parsed_data:
-                    extracted_tags = parsed_data['tags']
-                
-            except Exception as e:
-                print(f"DEBUG [Ad]: JSON parsing failed: {e}", flush=True)
+            if recommendation and recommendation.strip():
+                try:
+                    # Cleaning markdown code blocks if present
+                    clean_json = recommendation
+                    if "```" in clean_json:
+                        import re
+                        clean_json = re.sub(r"```json\s*|\s*```", "", clean_json, flags=re.IGNORECASE).strip()
+                    
+                    parsed_data = json.loads(clean_json)
+                    if isinstance(parsed_data, list):
+                        extracted_tags = parsed_data
+                    elif isinstance(parsed_data, dict) and 'tags' in parsed_data:
+                        extracted_tags = parsed_data['tags']
+                    
+                except Exception as e:
+                    print(f"DEBUG [Ad]: JSON parsing failed: {e}. Response: {recommendation[:200]}", flush=True)
+            else:
+                print(f"DEBUG [Ad]: Empty or invalid LLM response, skipping tag extraction", flush=True)
 
             # Filter valid tags
             rec_tags = set(t for t in extracted_tags if t in available_tags)
+            
+            # 降级策略：如果 LLM 未返回标签，使用关键词匹配
+            if not rec_tags:
+                print(f"DEBUG [Ad]: No tags from LLM, using fallback keyword matching", flush=True)
+                # 简单的关键词匹配：从用户输入中查找标签
+                user_input_lower = current_input.lower()
+                for tag in available_tags:
+                    if tag in user_input_lower or tag in str(tags):
+                        rec_tags.add(tag)
+                        if len(rec_tags) >= 5:  # 最多匹配5个标签
+                            break
+            
             print(f"DEBUG [Ad]: AI Selected Valid Tags: {rec_tags}", flush=True)
 
             # Match Ads
@@ -321,7 +347,8 @@ def chat():
         except Exception as e:
             print(f"DEBUG [Ad]: Advertisement analysis failed: {e}", flush=True)
 
-        print(f"DEBUG [Ad]: Finished. Found {len(recommended_ads)} ads.", flush=True)
+        elapsed_time = time.time() - start_time
+        print(f"DEBUG [Ad]: Finished in {elapsed_time:.2f}s. Found {len(recommended_ads)} ads.", flush=True)
         return recommended_ads
 
     # 定义流式生成器 
@@ -344,11 +371,16 @@ def chat():
             
             # 聊天结束，获取广告结果
             try:
-                ad_res = ad_future.result(timeout=5) 
+                ad_res = ad_future.result(timeout=20)  # 增加超时时间到20秒（LLM调用10秒+其他处理10秒）
                 if ad_res:
+                    print(f"DEBUG [Ad]: Sending {len(ad_res)} ads to frontend", flush=True)
                     yield f"data: {json.dumps({'advertise': ad_res}, ensure_ascii=False)}\n\n"
+                else:
+                    print(f"DEBUG [Ad]: No ads returned", flush=True)
+            except TimeoutError:
+                print(f"DEBUG [Ad]: Ad calculation timed out after 20 seconds", flush=True)
             except Exception as e:
-                print(f"Ad calculation timed out or failed: {e}")
+                print(f"DEBUG [Ad]: Ad calculation failed with error: {type(e).__name__}: {e}", flush=True)
             yield f"data: {json.dumps({'done': True})}\n\n"
 
         except Exception as e:

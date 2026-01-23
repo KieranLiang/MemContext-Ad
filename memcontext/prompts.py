@@ -24,6 +24,7 @@ GENERATE_SYSTEM_RESPONSE_USER_PROMPT = (
     "Now, please role-play as {relationship} to continue the dialogue between you and the user.\n"
     "The user just said: {query}\n"
     "Please provide a detailed and specific response based on the retrieved memories. "
+    "Try to keep your response within 2 paragraphs. "
     "When answering questions about video content, provide specific details including:\n"
     "- Exact time ranges and timestamps\n"
     "- Specific scenes, characters, and actions described in the memories\n"

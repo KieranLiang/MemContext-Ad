@@ -21,7 +21,6 @@ export default function ChatHeader({ userId }: ChatHeaderProps) {
           <div className="chat-header-user-avatar">
             {userInitial}
           </div>
-          <span className="chat-header-user-name">{userId}</span>
         </div>
       </div>
     </div>

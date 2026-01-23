@@ -9,7 +9,7 @@ interface ChatInputProps {
 
 const SUGGESTIONS = [
   '最近有哪些电影上线？',
-  '明天午餐吃什么呢？',
+  '明天中午吃什么呢？',
   '朋友过生日送什么礼物？',
 ];
 
