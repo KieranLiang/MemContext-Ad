@@ -1,15 +1,6 @@
 # MemContext-Ad
 Affiliate Marketing Platform For AI Agents with Long-term Memory and Multimodal capabilities.
 
-## 🚀 快速部署
-
-[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com)
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app)
-
-**5 分钟部署指南**: [QUICKSTART.md](QUICKSTART.md) ⚡
-
-**完整部署文档**: [DEPLOYMENT.md](DEPLOYMENT.md) 📚
-
 ## 项目结构 (Project Structure)
 
 - **Backend (`memdemo/`)**: Flask-based API server handling memory logic, LLM interaction, and RAG.
@@ -61,38 +52,9 @@ npm run dev
 
 前端 (Vite) 会自动将 `/api` 请求代理到后端 (Flask :5019)，无需额外配置跨域。
 
-## 🚀 生产部署 (Production Deployment)
+## 生产构建 (Build for Production)
 
-### 快速部署到云平台
+如果你想部署生产版本：
 
-[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com)
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app)
-
-**详细部署指南**: 
-- 📖 [快速开始](QUICKSTART.md) - 5 分钟部署指南
-- 📚 [完整文档](DEPLOYMENT.md) - 详细配置说明
-- 🔐 [环境变量](ENV_VARIABLES.md) - API Key 配置
-
-### 本地构建生产版本
-
-```bash
-# 1. 构建前端
-cd memdemo/frontend
-npm run build
-
-# 2. 启动生产服务器
-cd ../..
-export FLASK_ENV=production
-python memdemo/app.py
-```
-
-### Docker 部署
-
-```bash
-# 使用 Docker Compose
-docker-compose up -d
-
-# 或使用 Dockerfile
-docker build -t memcontext-ad .
-docker run -p 5019:5019 memcontext-ad
-```
+1.  在前端目录运行 `npm run build` 生成静态文件。
+2.  将生成的 `dist/` 目录内容部署到 Web 服务器，或配置 Flask 托管静态文件。
