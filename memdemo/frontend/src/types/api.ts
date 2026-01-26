@@ -89,15 +89,3 @@ export interface PersonalityAnalysisResponse {
   };
   error?: string;
 }
-
-export interface AdvertisingRequest {
-  user_id?: string;
-  interest_tag?: string[];
-  context?: string;
-}
-
-export interface AdvertisingResponse {
-  success: boolean;
-  advertise?: any[];
-  error?: string;
-}
