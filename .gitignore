@@ -248,3 +248,4 @@ package-lock.json
 # Project specific
 .gitmessage
 .memignore
+memcontext-mcp/config.json
