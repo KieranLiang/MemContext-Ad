@@ -27,7 +27,7 @@ class ShortTermMemory:
         return list(self.memory)
 
     def is_full(self):
-        return len(self.memory) > self.max_capacity # Use >= to be safe
+        return len(self.memory) >= self.max_capacity  # Use >= to trigger migration when full
 
     def pop_oldest(self):
         if self.memory:
