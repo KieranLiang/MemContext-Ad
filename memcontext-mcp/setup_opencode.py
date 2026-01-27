@@ -331,7 +331,7 @@ def main():
         print("\n提示:")
         print("- OpenCode 会自动加载 MCP 工具")
         print("- 您可以直接说 '请使用 add_memory 工具' 来添加记忆")
-        print("- 或说 '请从 MemoryOS 检索记忆' 来查询")
+        print("- 或说 '请从 MemContext 检索记忆' 来查询")
         print("\n配置文件位置:")
         print(f"  {paths['opencode_config']}")
         print("\n重要说明:")

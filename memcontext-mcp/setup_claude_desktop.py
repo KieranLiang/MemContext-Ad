@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-配置 Claude Desktop 的 MemoryOS MCP 服务器
+配置 Claude Desktop 的 MemContext MCP 服务器
 """
 
 import os
@@ -137,7 +137,7 @@ def main():
         print("\n提示:")
         print("- Claude Desktop 会自动加载 MCP 工具")
         print("- 您可以直接说 '请使用 add_memory 工具' 来添加记忆")
-        print("- 或说 '请从 MemoryOS 检索记忆' 来查询")
+        print("- 或说 '请从 MemContext 检索记忆' 来查询")
         print("\n配置文件位置:")
         print(f"  {paths['claude_config']}")
         return 0
