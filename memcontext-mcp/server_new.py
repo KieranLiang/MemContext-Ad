@@ -51,6 +51,24 @@ def init_memcontext(config_path: str) -> Memcontext:
         data_storage_path = os.path.normpath(data_storage_path)
         print(f"Memcontext: 将相对路径转换为绝对路径: {data_storage_path}", file=sys.stderr)
     
+    # 设置环境变量，供 embedding 模型使用
+    # 优先使用 embedding_api_key，如果没有则使用 openai_api_key
+    embedding_api_key = config.get('embedding_api_key') or config.get('openai_api_key')
+    embedding_base_url = config.get('embedding_base_url') or config.get('openai_base_url')
+    
+    if embedding_api_key:
+        # 设置 LLM_API_KEY（embedding 函数会回退使用这个）
+        os.environ['LLM_API_KEY'] = embedding_api_key
+        if embedding_base_url:
+            os.environ['LLM_BASE_URL'] = embedding_base_url
+        # 同时设置 EMBEDDING_API_KEY（优先使用）
+        os.environ['EMBEDDING_API_KEY'] = embedding_api_key
+        if embedding_base_url:
+            os.environ['EMBEDDING_BASE_URL'] = embedding_base_url
+        print(f"Memcontext: 已设置 Embedding API Key 环境变量", file=sys.stderr)
+    else:
+        print(f"Memcontext: 警告 - 未找到 embedding_api_key 或 openai_api_key", file=sys.stderr)
+    
     return Memcontext(
         user_id=config['user_id'],
         openai_api_key=config['openai_api_key'],
