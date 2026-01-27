@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-配置 Claude Code 的 MemoryOS MCP 服务器
+配置 Claude Code 的 MemContext MCP 服务器
 使用 claude mcp add 命令来添加 MCP 服务器
 
 根据 Claude Code 官方文档：
